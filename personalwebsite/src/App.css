@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@100&display=swap");
+
+body {
+  background-color: #161616;
+}
+
+.b-container {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.b-site-title {
+  text-align: center;
+}
+
+.b-site-title h1 {
+  font-family: "Alumni Sans", sans-serif;
+  font-weight: 100;
+  color: #efefef;
+  font-size: 5rem;
+  margin-bottom: 1rem;
+}
+
+.b-social-row {
+  font-size: 1.5rem;
+  color: white;
+  display: flex;
+  text-align: center;
+  width: 100px;
+  flex-direction: row;
+  margin: auto;
+}
+
+.b-social-col {
+  margin: auto;
+}
+
+.b-social-col a {
+  text-decoration: none;
+  color: #efefef;
+}
+
+.b-social-col a:active {
+  color: #efefef;
+}
+
+.b-social-col a:hover {
+  color: #6d62ff;
+}
+
+.b-social-container {
+  margin: auto;
+}
+
+.b-grid-container {
+}
+
+.b-grid-col {
+}
+
+.b-grid-row {
+}
