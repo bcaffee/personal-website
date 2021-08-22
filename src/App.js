@@ -1,36 +1,37 @@
 import "./App.css";
 import { FaGithub, FaEnvelope } from "react-icons/fa";
-import Container from "@material-ui/core/Container";
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import Paper from "@material-ui/core/Paper";
+import Grid from "@material-ui/core/Grid";
 
 function App() {
   return (
     <div className="App">
-      {/*
       <div className="b-container">
         <div id="header">
           <div className="b-site-title">
             <h1>Ben Caffee</h1>
           </div>
-          <div className="b-social-row">
-            <div className="b-social-col">
+
+          <Grid container spacing={2} className="b-social-row">
+            <Grid item className="b-social-col">
               <a href="https://github.com/bcaffee">
                 <FaGithub />
               </a>
-            </div>
-            <div className="b-social-col">
+            </Grid>
+
+            <Grid item className="b-social-col">
               <a href="mailto:bencaffeeofficial@gmail.com">
                 <FaEnvelope />
               </a>
-              
-            </div>
-          </div>
+            </Grid>
+          </Grid>
         </div>
         <div id="main-site-grid"></div>
       </div>
-      */}
     </div>
   );
 }
-
 
 export default App;
