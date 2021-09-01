@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@100&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+/*@import url("https://fonts.googleapis.com/css2?family=Allison&display=swap");*/
 
 /* HEADER */
 
@@ -19,72 +20,52 @@
 }
 
 .social a {
-  color: #efefef;
+  color: #6d62ff;
 }
 
 .social a:hover {
-  color: #6d62ff;
+  color: #efefef;
 }
 
 /* CONTENT */
 
-.introduction-description {
+.introduction {
   font-family: "Raleway", sans-serif;
   color: #efefef;
   font-size: 1.35rem;
   margin-bottom: 2rem;
-  text-align: center;
+  text-align: left;
 }
 
 .skills-grid {
   font-size: 2.25rem;
   font-family: "Raleway", sans-serif;
-  color: white;
+  color: #6d62ff;
   flex-direction: row;
   justify-content: center;
+  /*text-align: center;*/
   margin-bottom: 1rem;
 }
 
 .skills {
   font-size: 1.25rem;
-  
+  color: #efefef;
 }
 
-/*
-.panel-heading {
-  font-family: "DM Serif Text", serif;
-  background-color: #18131f;
+.projects-grid {
+  font-size: 2.25rem;
+  font-family: "Raleway", sans-serif;
   color: #6d62ff;
-  font-size: 1.95em;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
-.panel-block {
-  margin: auto;
-  padding: 1em;
-  padding-left: 2em;
-  padding-right: 2em;
-  font-size: 1.15em;
-  color: #1C6E8C;
-  border: 0 !important;
-  font-family: "Montserrat", sans-serif;
+.p-label {
+  font-family: "Raleway", sans-serif;
+  color: #efefef;
 }
-
-.panel-title {
-  width: 100%;
-  margin: auto;
-  font-size: 1.25em;
-}
-
-.panel-description {
-  width: 100%;
-  margin: auto;
-}
-
-.panel-content {
-  padding: 0.5em;
-  width: 100%;
-  margin: auto;
-}*/
 
 body {
   background-color: #161616;
