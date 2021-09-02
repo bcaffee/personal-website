@@ -13,15 +13,14 @@ import {
   CardActionArea,
   CardContent,
   CardMedia,
-  CardActions,
-  // Button,
+  // CardActions,
   useMediaQuery,
   IconButton,
 } from "@material-ui/core";
 import GitHubIcon from "@material-ui/icons/GitHub";
-import hackathon_projects from "./projects/hackathon.json";
-import game_projects from "./projects/game.json";
-import other_projects from "./projects/other.json";
+import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
+
+import { mainPage } from "./siteContent.js";
 
 export default function App() {
   const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
@@ -54,11 +53,14 @@ export default function App() {
       width: "20rem", //20em?
     },
     img: {
-      maxHeight: "200px",
+      maxHeight: "275px",
     },
   }));
 
   const classes = useStyles();
+  const gProjects = mainPage.gameThumbnails;
+  const oProjects = mainPage.otherThumbnails;
+  const hProjects = mainPage.hackathonThumbnails;
 
   return (
     <div className="App">
@@ -82,7 +84,8 @@ export default function App() {
             </Grid>
 
             <div className="introduction">
-              <p>
+              {mainPage.introduction}
+              {/* <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
                 commodo euismod nisl, quis sollicitudin ex laoreet eu.
               </p>
@@ -110,11 +113,11 @@ export default function App() {
                 ex egestas quis. Donec dictum pretium lorem sed aliquet. Cras
                 tincidunt, ligula id ultrices egestas, lorem elit scelerisque
                 urna, id convallis nisl nibh sit amet velit.
-              </p>
+              </p> */}
             </div>
             <Grid container spacing={10} className="skills-grid">
               <Grid item>
-                Skills
+                <h4>Skills</h4>
                 <Grid container spacing={2} className="skills">
                   <ul>
                     (Sorted by proficiency/experience in descending order)
@@ -145,12 +148,13 @@ export default function App() {
                     <Grid item>
                       <li>Dolor sit amet</li>
                     </Grid>
+                    {/* {mainPage.skills}*/}
                   </ul>
                 </Grid>
               </Grid>
 
               <Grid item>
-                Skills to Improve
+                <h4>Skills to Improve</h4>
                 <Grid container spacing={2} className="skills">
                   <ul>
                     (Sorted by priority in descending order)
@@ -173,20 +177,18 @@ export default function App() {
                 </Grid>
               </Grid>
             </Grid>
-
             <Grid container spacing={2} className="projects-grid">
               <Grid item>
-                Game Projects
-                <Grid container spacing={3} direction="column">
-                  {Object.keys(game_projects).map((project) => (
+                <h4>Game Projects</h4>
+                <Grid container spacing={2} direction="column">
+                  {Object.keys(gProjects).map((project) => (
                     <Grid item key={project}>
                       <Card className={classes.root}>
                         <CardActionArea>
                           <CardMedia
-                            image={game_projects[project]["img"]}
-                            key={project}
+                            image={gProjects[project]["img"]}
                             component="img"
-                            className={classes.img}
+                            className={classes.img} //FORMATTING
                           />
                           <CardContent className="p-label">
                             <Typography
@@ -195,13 +197,29 @@ export default function App() {
                               component="h2"
                               style={{ fontWeight: "bold" }}
                             >
-                              {project}
+                              {gProjects[project]["title"]}
                             </Typography>
                             <Typography>
-                              {game_projects[project]["desc"]}
+                              {gProjects[project]["desc"]}
                             </Typography>
                           </CardContent>
                         </CardActionArea>
+                        <IconButton
+                          onClick={function click() {
+                            if (gProjects[project]["git"] !== "") {
+                              window.open(oProjects[project]["git"]);
+                            }
+                          }}
+                        >
+                          <GitHubIcon />
+                        </IconButton>
+                        <IconButton
+                          onClick={function click() {
+                            //TODO: Open Modal
+                          }}
+                        >
+                          <MoreHorizIcon />
+                        </IconButton>
                       </Card>
                     </Grid>
                   ))}
@@ -209,14 +227,14 @@ export default function App() {
               </Grid>
 
               <Grid item>
-                Other
-                <Grid container spacing={3} direction="column">
-                  {Object.keys(other_projects).map((project) => (
+                <h4>Other</h4>
+                <Grid container spacing={2} direction="column">
+                  {Object.keys(oProjects).map((project) => (
                     <Grid item key={project}>
                       <Card className={classes.root}>
                         <CardActionArea>
                           <CardMedia
-                            image={other_projects[project]["img"]}
+                            image={oProjects[project]["img"]}
                             key={project}
                             component="img"
                             className={classes.img}
@@ -228,25 +246,27 @@ export default function App() {
                               component="h2"
                               style={{ fontWeight: "bold" }}
                             >
-                              {project}
+                              {oProjects[project]["title"]}
                             </Typography>
                             <Typography>
-                              {other_projects[project]["desc"]}
+                              {oProjects[project]["desc"]}
                             </Typography>
                           </CardContent>
                         </CardActionArea>
-                        <CardActions>
-                          <IconButton
-                            onClick={function click() {
-                              window.open(
-                                other_projects[project]["git"],
-                                "_blank"
-                              );
-                            }}
-                          >
-                            <GitHubIcon />
-                          </IconButton>
-                        </CardActions>
+                        <IconButton
+                          onClick={function click() {
+                            window.open(oProjects[project]["git"]);
+                          }}
+                        >
+                          <GitHubIcon />
+                        </IconButton>
+                        <IconButton
+                          onClick={function click() {
+                            //TODO: Open Modal
+                          }}
+                        >
+                          <MoreHorizIcon />
+                        </IconButton>
                       </Card>
                     </Grid>
                   ))}
@@ -254,14 +274,14 @@ export default function App() {
               </Grid>
 
               <Grid item>
-                Hackathons
-                <Grid container spacing={3} direction="column">
-                  {Object.keys(hackathon_projects).map((project) => (
+                <h4>Hackathons</h4>
+                <Grid container spacing={2} direction="column">
+                  {Object.keys(hProjects).map((project) => (
                     <Grid item key={project}>
                       <Card className={classes.root}>
                         <CardActionArea>
                           <CardMedia
-                            image={hackathon_projects[project]["img"]}
+                            image={hProjects[project]["img"]}
                             key={project}
                             component="img"
                             className={classes.img}
@@ -273,25 +293,27 @@ export default function App() {
                               component="h2"
                               style={{ fontWeight: "bold" }}
                             >
-                              {project}
+                              {hProjects[project]["title"]}
                             </Typography>
                             <Typography>
-                              {hackathon_projects[project]["desc"]}
+                              {hProjects[project]["desc"]}
                             </Typography>
                           </CardContent>
                         </CardActionArea>
-                        <CardActions>
-                          <IconButton
-                            onClick={function click() {
-                              window.open(
-                                hackathon_projects[project]["git"],
-                                "_blank"
-                              );
-                            }}
-                          >
-                            <GitHubIcon />
-                          </IconButton>
-                        </CardActions>
+                        <IconButton
+                          onClick={function click() {
+                            window.open(hProjects[project]["git"]);
+                          }}
+                        >
+                          <GitHubIcon />
+                        </IconButton>
+                        <IconButton
+                          onClick={function click() {
+                            //TODO: Open Modal
+                          }}
+                        >
+                          <MoreHorizIcon />
+                        </IconButton>
                       </Card>
                     </Grid>
                   ))}
@@ -301,13 +323,9 @@ export default function App() {
           </div>
         </div>
       </ThemeProvider>
+      <script type="module" src="siteContent.js"></script>
     </div>
 
-    //TODO: Display projects in gridlike way pulling from projects.json
+    //TODO: Add footer
   );
 }
-
-//https://github.com/bcaffee/DungeonCrawler
-//https://www.frogrockstudio.com/house-match/"
-//https://devpost.com/software/roachcoach-s-forbidden-food
-//https://devpost.com/software/evencredit2019
