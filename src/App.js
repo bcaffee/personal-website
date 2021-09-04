@@ -9,11 +9,11 @@ import {
 import {
   Grid,
   Typography,
+  Paper,
   Card,
   CardActionArea,
   CardContent,
   CardMedia,
-  // CardActions,
   useMediaQuery,
   IconButton,
 } from "@material-ui/core";
@@ -49,11 +49,16 @@ export default function App() {
 
   const useStyles = makeStyles((style) => ({
     root: {
-      backgroundColor: "#313535",
-      width: "20rem", //20em?
+      backgroundColor: "#222525",
+      width: "20rem",
     },
     img: {
       maxHeight: "275px",
+    },
+    pRoot: {
+      // margin: theme.spacing(1),
+      width: theme.spacing(50),
+      height: theme.spacing(65),
     },
   }));
 
@@ -84,97 +89,58 @@ export default function App() {
             </Grid>
 
             <div className="introduction">
-              {mainPage.introduction}
-              {/* <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                commodo euismod nisl, quis sollicitudin ex laoreet eu.
-              </p>
-              <p>
-                Quisque sagittis nibh quam, ut efficitur elit interdum non. Cras
-                libero leo, pharetra nec convallis non, tincidunt ut lectus. Sed
-                non molestie enim. Mauris nec est ut lectus tempor auctor non
-                eget sapien. Proin sit amet varius nunc. Curabitur erat massa,
-                consectetur non vehicula ac, imperdiet non odio. Ut quis risus
-                libero. Pellentesque risus nunc, dignissim eget leo et, placerat
-                euismod justo.
-              </p>
-              <p>
-                Aliquam blandit semper leo et facilisis. Nam dui risus,
-                sollicitudin nec bibendum ac, consectetur facilisis nisi. Etiam
-                vestibulum odio vel magna condimentum, eget consequat justo
-                efficitur. Ut consectetur erat diam, in dignissim ligula commodo
-                vel. Sed lacinia ante libero, vitae tincidunt libero viverra
-                nec. Aenean lacinia dolor in ipsum accumsan, vitae dignissim
-                eros eleifend. Vivamus blandit tempus nibh id sollicitudin.
-                Etiam iaculis ligula id posuere tincidunt. Duis quam magna,
-                viverra sed metus et, volutpat iaculis justo. Vivamus a laoreet
-                risus. Phasellus malesuada lacinia libero, vel vulputate mi
-                tincidunt sit amet. Nullam venenatis justo lorem, eget hendrerit
-                ex egestas quis. Donec dictum pretium lorem sed aliquet. Cras
-                tincidunt, ligula id ultrices egestas, lorem elit scelerisque
-                urna, id convallis nisl nibh sit amet velit.
-              </p> */}
+              <p>{mainPage.introductions[0]}</p>
+              <p>{mainPage.introductions[1]}</p>
             </div>
             <Grid container spacing={10} className="skills-grid">
               <Grid item>
-                <h4>Skills</h4>
-                <Grid container spacing={2} className="skills">
-                  <ul>
-                    (Sorted by proficiency/experience in descending order)
-                    <Typography>
-                      <br></br>
-                    </Typography>
-                    <Grid item>
-                      <li>Lorem ipsum</li>
-                    </Grid>
-                    <Grid item>
-                      <li>Dolor sit amet</li>
-                    </Grid>
-                    <Grid item>
-                      <li>Consectetur</li>
-                    </Grid>
-                    <Grid item>
-                      <li>Lorem ipsum</li>
-                    </Grid>
-                    <Grid item>
-                      <li>Dolor sit amet</li>
-                    </Grid>
-                    <Grid item>
-                      <li>Consectetur</li>
-                    </Grid>
-                    <Grid item>
-                      <li>Lorem ipsum</li>
-                    </Grid>
-                    <Grid item>
-                      <li>Dolor sit amet</li>
-                    </Grid>
-                    {/* {mainPage.skills}*/}
-                  </ul>
-                </Grid>
+                {/* <Paper className={classes.pRoot} elevation={3}> */}
+                  <h4 className="skill-titles">Skills</h4>
+                  <div className="skills-note">
+                    (Sorted by proficiency and experience in descending order)
+                  </div>
+                  <Grid container spacing={2} className="skills">
+                    <ul>
+                      {Object.keys(mainPage.skills).map((skill) => (
+                        <Grid item key={skill}>
+                          <li className="skills">{mainPage.skills[skill]}</li>
+                        </Grid>
+                      ))}
+                      <div className="skill-divider">
+                        ---------------------------------
+                      </div>
+                      {Object.keys(mainPage.otherSkills).map((otherSkill) => (
+                        <Grid item key={otherSkill}>
+                          <li className="skills">
+                            {mainPage.otherSkills[otherSkill]}
+                          </li>
+                        </Grid>
+                      ))}
+                    </ul>
+                  </Grid>
+                {/* </Paper> */}
               </Grid>
 
               <Grid item>
-                <h4>Skills to Improve</h4>
-                <Grid container spacing={2} className="skills">
-                  <ul>
+                {/* <Paper className={classes.pRoot} elevation={3}> */}
+                  <h4 className="skill-titles">Skills to Improve</h4>
+                  <div className="skills-note">
                     (Sorted by priority in descending order)
-                    <Typography>
-                      <br></br>
-                    </Typography>
-                    <Grid item>
-                      <li>Lorem ipsum</li>
-                    </Grid>
-                    <Grid item>
-                      <li>Dolor sit amet</li>
-                    </Grid>
-                    <Grid item>
-                      <li>Consectetur</li>
-                    </Grid>
-                    <Grid item>
-                      <li>Lorem ipsum</li>
-                    </Grid>
-                  </ul>
-                </Grid>
+                  </div>
+                  <Grid container spacing={2} className="skills">
+                    <ul>
+                      {Object.keys(mainPage.skillsToImprove).map(
+                        (skillToImprove) => (
+                          <Grid item key={skillToImprove}>
+                            <li className="skills">
+                              {mainPage.skillsToImprove[skillToImprove]}
+                            </li>
+                          </Grid>
+                        )
+                      )}
+                    </ul>
+                  </Grid>
+                {/* </Paper> */}
               </Grid>
             </Grid>
             <Grid container spacing={2} className="projects-grid">
@@ -188,9 +154,9 @@ export default function App() {
                           <CardMedia
                             image={gProjects[project]["img"]}
                             component="img"
-                            className={classes.img} //FORMATTING
+                            className={classes.img}
                           />
-                          <CardContent className="p-label">
+                          <CardContent className="p-desc">
                             <Typography
                               gutterBottom
                               variant="h5"
@@ -204,15 +170,15 @@ export default function App() {
                             </Typography>
                           </CardContent>
                         </CardActionArea>
-                        <IconButton
-                          onClick={function click() {
-                            if (gProjects[project]["git"] !== "") {
-                              window.open(oProjects[project]["git"]);
-                            }
-                          }}
-                        >
-                          <GitHubIcon />
-                        </IconButton>
+                        {gProjects[project]["git"].trim().length > 0 && (
+                          <IconButton
+                            onClick={function click() {
+                              window.open(gProjects[project]["git"]);
+                            }}
+                          >
+                            <GitHubIcon />
+                          </IconButton>
+                        )}
                         <IconButton
                           onClick={function click() {
                             //TODO: Open Modal
@@ -239,7 +205,7 @@ export default function App() {
                             component="img"
                             className={classes.img}
                           />
-                          <CardContent className="p-label">
+                          <CardContent className="p-desc">
                             <Typography
                               gutterBottom
                               variant="h5"
@@ -286,7 +252,7 @@ export default function App() {
                             component="img"
                             className={classes.img}
                           />
-                          <CardContent className="p-label">
+                          <CardContent className="p-desc">
                             <Typography
                               gutterBottom
                               variant="h5"
@@ -322,10 +288,10 @@ export default function App() {
             </Grid>
           </div>
         </div>
+        <div className="footer">
+          Copyright © {new Date().getFullYear()} Ben Caffee.
+        </div>
       </ThemeProvider>
-      <script type="module" src="siteContent.js"></script>
     </div>
-
-    //TODO: Add footer
   );
 }

@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@100&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
-/*@import url("https://fonts.googleapis.com/css2?family=Allison&display=swap");*/
 
 /* HEADER */
 
@@ -33,23 +32,42 @@
   font-family: "Raleway", sans-serif;
   color: #efefef;
   font-size: 1.35rem;
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
   text-align: left;
 }
 
 .skills-grid {
-  font-size: 2.25rem;
   font-family: "Raleway", sans-serif;
-  color: #6d62ff;
   flex-direction: row;
   justify-content: center;
-  /*text-align: center;*/
-  /* margin-bottom: 1rem; */
+}
+
+.skills-paper {
+  color: #222525;
+}
+
+.skill-titles {
+  color: #6d62ff;
+  font-size: 2.25rem;
+  margin-bottom: 0.25rem;
+  /* justify-content: left; */
+}
+
+.skills-note {
+  color: #efefef;
+  font-size: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .skills {
-  font-size: 1.25rem;
   color: #efefef;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.skill-divider {
+  margin-bottom: 1rem;
 }
 
 .projects-grid {
@@ -59,20 +77,28 @@
   flex-direction: row;
   justify-content: center;
   text-align: center;
-  /* margin-bottom: 1rem; */
 }
 
-.projects-grid-title {
-
+.p-grid-card {
+  background-color: "#313535";
+  width: "20rem";
 }
 
-.p-label {
+/* .p-card-img {
+  max-height: "275px";
+}
+
+.p-desc {
   font-family: "Raleway", sans-serif;
   color: #efefef;
-}
+}*/
 
-body {
-  background-color: #161616;
+.footer {
+  color: #efefef;
+  font-family: "Raleway", sans-serif;
+  margin-top: 7rem;
+  margin-bottom: 5.5rem;
+  text-align: center;
 }
 
 .container {
@@ -80,6 +106,6 @@ body {
   margin: auto;
 }
 
-/* footer {
-  color: #efefef;
-} */
+body {
+  background-color: #131212;
+}
