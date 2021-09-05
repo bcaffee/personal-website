@@ -9,7 +9,6 @@ import {
 import {
   Grid,
   Typography,
-  Paper,
   Card,
   CardActionArea,
   CardContent,
@@ -55,11 +54,6 @@ export default function App() {
     img: {
       maxHeight: "275px",
     },
-    pRoot: {
-      // margin: theme.spacing(1),
-      width: theme.spacing(50),
-      height: theme.spacing(65),
-    },
   }));
 
   const classes = useStyles();
@@ -94,53 +88,49 @@ export default function App() {
             </div>
             <Grid container spacing={10} className="skills-grid">
               <Grid item>
-                {/* <Paper className={classes.pRoot} elevation={3}> */}
-                  <h4 className="skill-titles">Skills</h4>
-                  <div className="skills-note">
-                    (Sorted by proficiency and experience in descending order)
-                  </div>
-                  <Grid container spacing={2} className="skills">
-                    <ul>
-                      {Object.keys(mainPage.skills).map((skill) => (
-                        <Grid item key={skill}>
-                          <li className="skills">{mainPage.skills[skill]}</li>
-                        </Grid>
-                      ))}
-                      <div className="skill-divider">
-                        ---------------------------------
-                      </div>
-                      {Object.keys(mainPage.otherSkills).map((otherSkill) => (
-                        <Grid item key={otherSkill}>
-                          <li className="skills">
-                            {mainPage.otherSkills[otherSkill]}
-                          </li>
-                        </Grid>
-                      ))}
-                    </ul>
-                  </Grid>
-                {/* </Paper> */}
+                <h4 className="skill-titles">Skills</h4>
+                <div className="skills-note">
+                  (Sorted by proficiency and experience in descending order)
+                </div>
+                <Grid container spacing={2} className="skills">
+                  <ul>
+                    {Object.keys(mainPage.skills).map((skill) => (
+                      <Grid item key={skill}>
+                        <li className="skills">{mainPage.skills[skill]}</li>
+                      </Grid>
+                    ))}
+                    <div className="skill-divider">
+                      ---------------------------------
+                    </div>
+                    {Object.keys(mainPage.otherSkills).map((otherSkill) => (
+                      <Grid item key={otherSkill}>
+                        <li className="skills">
+                          {mainPage.otherSkills[otherSkill]}
+                        </li>
+                      </Grid>
+                    ))}
+                  </ul>
+                </Grid>
               </Grid>
 
               <Grid item>
-                {/* <Paper className={classes.pRoot} elevation={3}> */}
-                  <h4 className="skill-titles">Skills to Improve</h4>
-                  <div className="skills-note">
-                    (Sorted by priority in descending order)
-                  </div>
-                  <Grid container spacing={2} className="skills">
-                    <ul>
-                      {Object.keys(mainPage.skillsToImprove).map(
-                        (skillToImprove) => (
-                          <Grid item key={skillToImprove}>
-                            <li className="skills">
-                              {mainPage.skillsToImprove[skillToImprove]}
-                            </li>
-                          </Grid>
-                        )
-                      )}
-                    </ul>
-                  </Grid>
-                {/* </Paper> */}
+                <h4 className="skill-titles">Skills to Improve</h4>
+                <div className="skills-note">
+                  (Sorted by priority in descending order)
+                </div>
+                <Grid container spacing={2} className="skills">
+                  <ul>
+                    {Object.keys(mainPage.skillsToImprove).map(
+                      (skillToImprove) => (
+                        <Grid item key={skillToImprove}>
+                          <li className="skills">
+                            {mainPage.skillsToImprove[skillToImprove]}
+                          </li>
+                        </Grid>
+                      )
+                    )}
+                  </ul>
+                </Grid>
               </Grid>
             </Grid>
             <Grid container spacing={2} className="projects-grid">

@@ -1,7 +1,7 @@
 const mainPage = {
   introductions: [
-    "Hi! I'm a CS and Math major at UW Seattle, graduating in 2025. I like learning about different ML applications such as detecting fake media, natural language processing, and enhanced graphics like Nvidia's DLSS technology. My interests also include reinforcement learning for games and cybersecurity.",
-    "During high school, I tutored students in math plus other subjects and lead the General Computing Club (GCC). At GCC, people of all backgrounds learn to connect their interests to computer science and create projects using more than just coding skills. Outside of academics, I've enjoyed swimming competitively and practicing Brazilian Jiu-Jitsu.",
+    "Hi! I'm a Computer Science and Math major at UW Seattle, graduating in 2025. I like learning about different ML applications such as detecting fake media, natural language processing, and enhanced graphics like Nvidia's DLSS technology. My interests also include reinforcement learning for games and cybersecurity.",
+    "During high school, I tutored students in Math and CS (among other subjects), and lead the General Computing Club (GCC). At GCC, people of all backgrounds learn to connect their interests to computer science and create projects using more than just coding skills. Outside of academics, I've enjoyed swimming competitively and practicing Brazilian Jiu-Jitsu.",
   ],
 
   skills: [
@@ -32,19 +32,19 @@ const mainPage = {
     },
     {
       title: "Prototype57",
-      desc: "A 3D third person procedural tower defense game.",
+      desc: "A 3D sci-fi themed third person procedural tower defense game.",
       img: "images/Prototype57.png",
       git: "",
     },
     {
       title: "HVScape",
-      desc: "Quisque sagittis nibh quam, ut efficitur elit interdum non.",
+      desc: "A super simple high school themed VR escape room.",
       img: "images/HVScape.png",
       git: "",
     },
     {
       title: "Dungeon Crawler",
-      desc: "Cras libero leo, pharetra nec convallis non, tincidunt ut lectus.",
+      desc: "A roguelike game without a good name.", //Use conditional rendering to link this in the card https://en.wikipedia.org/wiki/Roguelike and http://www.roguebasin.com/index.php?title=Berlin_Interpretation
       img: "images/DungeonCrawler.png",
       git: "https://github.com/bcaffee/DungeonCrawler",
     },
@@ -53,13 +53,13 @@ const mainPage = {
   otherThumbnails: [
     {
       title: "Fractal Generator",
-      desc: "Donec dictum pretium lorem sed aliquet.",
+      desc: "A GUI that produces self-similar tethered radial fractals like the Sierpiński triangle.", //Use conditional rendering to link this in the card https://en.wikipedia.org/wiki/Sierpinski_triangle
       img: "images/FractalGenerator.png",
       git: "https://github.com/bcaffee/FractalGenerator",
     },
     {
       title: "Tic-Tac-Toe RL Agent",
-      desc: "A deep-quality learning tic-tac-toe agent that always either wins or ties.", //Use conditional rendering to link this in the card https://en.wikipedia.org/wiki/Convolutional_neural_network#Deep_Q-networks
+      desc: "A deep-quality learning tic-tac-toe agent that always wins or ties.", //Use conditional rendering to link this in the card https://en.wikipedia.org/wiki/Convolutional_neural_network#Deep_Q-networks
       // img: "",
       // git: "",
     },
@@ -79,7 +79,7 @@ const mainPage = {
     },
     {
       title: "B.LAB",
-      desc: "Etiam iaculis ligula id posuere tincidunt.",
+      desc: "An Android and iOS mobile app that gathers a listing of loan offerings customized to your specific profile.",
       img: "images/B.LAB.png",
       git: "https://github.com/shreystechtips/B.LAB-EvenAPI",
     },
