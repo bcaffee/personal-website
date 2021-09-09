@@ -17,9 +17,13 @@ import {
   IconButton,
 } from "@material-ui/core";
 import GitHubIcon from "@material-ui/icons/GitHub";
-import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
-
-import { mainPage } from "./siteContent.js";
+import { mainPage } from "./site-content.js";
+import { ProjectModal } from "./project-modal.js";
+import ReactHtmlParser, {
+  processNodes,
+  convertNodeToElement,
+  htmlparser2,
+} from "react-html-parser";
 
 export default function App() {
   const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
@@ -83,10 +87,13 @@ export default function App() {
             </Grid>
 
             <div className="introduction">
-              <p>{mainPage.introductions[0]}</p>
+              <p>
+                {mainPage.introductions[0]}
+                {/*ReactHtmlParser(mainPage.introductions[0]) for linking stuff in the intro*/}
+              </p>
               <p>{mainPage.introductions[1]}</p>
             </div>
-            <Grid container spacing={10} className="skills-grid">
+            <Grid container spacing={8} className="skills-grid">
               <Grid item>
                 <h4 className="skill-titles">Skills</h4>
                 <div className="skills-note">
@@ -114,9 +121,10 @@ export default function App() {
               </Grid>
 
               <Grid item>
-                <h4 className="skill-titles">Skills to Improve</h4>
+                <h4 className="skill-titles">Goals</h4>
                 <div className="skills-note">
-                  (Sorted by priority in descending order)
+                  (Skills that I want to improve. Sorted by priority in
+                  descending order)
                 </div>
                 <Grid container spacing={2} className="skills">
                   <ul>
@@ -142,11 +150,11 @@ export default function App() {
                       <Card className={classes.root}>
                         <CardActionArea>
                           <CardMedia
-                            image={gProjects[project]["img"]}
+                            image={gProjects[project]["thumbnailImg"]}
                             component="img"
                             className={classes.img}
                           />
-                          <CardContent className="p-desc">
+                          <CardContent>
                             <Typography
                               gutterBottom
                               variant="h5"
@@ -156,26 +164,26 @@ export default function App() {
                               {gProjects[project]["title"]}
                             </Typography>
                             <Typography>
-                              {gProjects[project]["desc"]}
+                              {gProjects[project]["thumbnailDesc"]}
                             </Typography>
                           </CardContent>
                         </CardActionArea>
-                        {gProjects[project]["git"].trim().length > 0 && (
-                          <IconButton
-                            onClick={function click() {
-                              window.open(gProjects[project]["git"]);
-                            }}
-                          >
-                            <GitHubIcon />
-                          </IconButton>
-                        )}
-                        <IconButton
-                          onClick={function click() {
-                            //TODO: Open Modal
-                          }}
-                        >
-                          <MoreHorizIcon />
-                        </IconButton>
+                        <Grid container direction="row" justifyContent="center">
+                          <Grid item>
+                            {gProjects[project]["git"].trim().length > 0 && (
+                              <IconButton
+                                onClick={function click() {
+                                  window.open(gProjects[project]["git"]);
+                                }}
+                              >
+                                <GitHubIcon />
+                              </IconButton>
+                            )}
+                          </Grid>
+                          <Grid item>
+                            <ProjectModal project={gProjects[project]} />
+                          </Grid>
+                        </Grid>
                       </Card>
                     </Grid>
                   ))}
@@ -190,12 +198,12 @@ export default function App() {
                       <Card className={classes.root}>
                         <CardActionArea>
                           <CardMedia
-                            image={oProjects[project]["img"]}
+                            image={oProjects[project]["thumbnailImg"]}
                             key={project}
                             component="img"
                             className={classes.img}
                           />
-                          <CardContent className="p-desc">
+                          <CardContent>
                             <Typography
                               gutterBottom
                               variant="h5"
@@ -205,24 +213,24 @@ export default function App() {
                               {oProjects[project]["title"]}
                             </Typography>
                             <Typography>
-                              {oProjects[project]["desc"]}
+                              {oProjects[project]["thumbnailDesc"]}
                             </Typography>
                           </CardContent>
                         </CardActionArea>
-                        <IconButton
-                          onClick={function click() {
-                            window.open(oProjects[project]["git"]);
-                          }}
-                        >
-                          <GitHubIcon />
-                        </IconButton>
-                        <IconButton
-                          onClick={function click() {
-                            //TODO: Open Modal
-                          }}
-                        >
-                          <MoreHorizIcon />
-                        </IconButton>
+                        <Grid container direction="row" justifyContent="center">
+                          <Grid item>
+                            <IconButton
+                              onClick={function click() {
+                                window.open(oProjects[project]["git"]);
+                              }}
+                            >
+                              <GitHubIcon />
+                            </IconButton>
+                          </Grid>
+                          <Grid item>
+                            <ProjectModal project={oProjects[project]} />
+                          </Grid>
+                        </Grid>
                       </Card>
                     </Grid>
                   ))}
@@ -237,12 +245,12 @@ export default function App() {
                       <Card className={classes.root}>
                         <CardActionArea>
                           <CardMedia
-                            image={hProjects[project]["img"]}
+                            image={hProjects[project]["thumbnailImg"]}
                             key={project}
                             component="img"
                             className={classes.img}
                           />
-                          <CardContent className="p-desc">
+                          <CardContent>
                             <Typography
                               gutterBottom
                               variant="h5"
@@ -252,24 +260,24 @@ export default function App() {
                               {hProjects[project]["title"]}
                             </Typography>
                             <Typography>
-                              {hProjects[project]["desc"]}
+                              {hProjects[project]["thumbnailDesc"]}
                             </Typography>
                           </CardContent>
                         </CardActionArea>
-                        <IconButton
-                          onClick={function click() {
-                            window.open(hProjects[project]["git"]);
-                          }}
-                        >
-                          <GitHubIcon />
-                        </IconButton>
-                        <IconButton
-                          onClick={function click() {
-                            //TODO: Open Modal
-                          }}
-                        >
-                          <MoreHorizIcon />
-                        </IconButton>
+                        <Grid container direction="row" justifyContent="center">
+                          <Grid item>
+                            <IconButton
+                              onClick={function click() {
+                                window.open(hProjects[project]["git"]);
+                              }}
+                            >
+                              <GitHubIcon />
+                            </IconButton>
+                          </Grid>
+                          <Grid item>
+                            <ProjectModal project={hProjects[project]} />
+                          </Grid>
+                        </Grid>
                       </Card>
                     </Grid>
                   ))}
