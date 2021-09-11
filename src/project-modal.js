@@ -1,7 +1,8 @@
 import React from "react";
+import "./custom.css";
 import { makeStyles } from "@material-ui/core/styles";
 import { Modal, IconButton, Backdrop, Fade } from "@material-ui/core";
-import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
+import ReactHtmlParser from "react-html-parser";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 
 const useStyles = makeStyles((theme) => ({
@@ -11,14 +12,20 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
   },
   paper: {
-    backgroundColor: theme.palette.background.paper,
-    border: "2px solid #000",
+    backgroundColor: "#222525",
+    fontFamily: "Raleway",
+    color: "#efefef",
+    // border: "1px solid #000",
     boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 4, 3),
+    padding: theme.spacing(0, 5, 1),
+    marginTop: 200,
+    marginBottom: 200,
+    marginLeft: 400,
+    marginRight: 400,
   },
 }));
 
-export default function ProjectModal(project) {
+export default function ProjectModal({ project }) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
 
@@ -50,7 +57,7 @@ export default function ProjectModal(project) {
         <Fade in={open}>
           <div className={classes.paper}>
             <h2 id="title">{project.title}</h2>
-            <p id="info">{project.info}</p>
+            <p id="info">{ReactHtmlParser(project.modalInfo)}</p>
           </div>
         </Fade>
       </Modal>

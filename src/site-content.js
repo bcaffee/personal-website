@@ -2,7 +2,7 @@ const mainPage = {
   introductions: [
     "Hi! I'm a Computer Science and Math major at UW Seattle, graduating in 2025. I like learning about different ML applications such as detecting fake media, natural language processing, and enhanced graphics like Nvidia's DLSS technology. My interests also include reinforcement learning for games and cybersecurity.",
     "During high school, I tutored students in Math and CS (among other subjects), and lead the General Computing Club (GCC). At GCC, people of all backgrounds learn to connect their interests to computer science and create projects using more than just coding skills. Outside of academics, I've enjoyed swimming competitively and practicing Brazilian Jiu-Jitsu.",
-  ],  //<a href=""> </a>
+  ],
 
   skills: [
     "Java Programming",
@@ -23,39 +23,43 @@ const mainPage = {
     "Music Production (FL Studio)",
   ],
 
-  gameThumbnails: [
+  games: [
     {
       title: "House Match",
       thumbnailDesc:
-        "A mobile match-three game with fast paced strategic gameplay and a little tetris twist.",
-      info: "",
+        "Mobile match-three game with fast paced strategic gameplay and a little tetris twist.",
+      modalInfo:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sapien eget mi proin sed libero enim sed faucibus. Suspendisse sed nisi lacus sed viverra. Blandit volutpat maecenas volutpat blandit aliquam etiam erat velit scelerisque. Donec adipiscing tristique risus nec feugiat in fermentum posuere. Malesuada nunc vel risus commodo viverra maecenas accumsan lacus. Et odio pellentesque diam volutpat. Arcu bibendum at varius vel pharetra vel. Eu lobortis elementum nibh tellus molestie nunc. Eros in cursus turpis massa. Risus feugiat in ante metus dictum at tempor.       Molestie nunc non blandit massa enim nec dui nunc mattis. Feugiat nibh sed pulvinar proin gravida hendrerit lectus a. Posuere ac ut consequat semper. Et malesuada fames ac turpis egestas maecenas pharetra convallis posuere. Nulla pharetra diam sit amet nisl suscipit adipiscing. Augue ut lectus arcu bibendum at varius vel pharetra vel. In ante metus dictum at tempor commodo ullamcorper a lacus. Feugiat in ante metus dictum. Faucibus scelerisque eleifend donec pretium vulputate sapien. Sed vulputate odio ut enim blandit volutpat maecenas. Erat pellentesque adipiscing commodo elit at imperdiet dui accumsan.",
+
       thumbnailImg: "images/HouseMatch.png",
-      imgs: ["", ""],
+      imgs: ["images/HouseMatch.png", ""],
       git: "",
     },
     {
       title: "Prototype57",
-      thumbnailDesc:
-        "A 3D sci-fi themed third person procedural tower defense game.",
-      info: "",
+      thumbnailDesc: "3D third person procedural tower defense game.",
+      modalInfo:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sapien eget mi proin sed libero enim sed faucibus. Suspendisse sed nisi lacus sed viverra. Blandit volutpat maecenas volutpat blandit aliquam etiam erat velit scelerisque.",
       thumbnailImg: "images/Prototype57.png",
-      imgs: ["", ""],
+      imgs: ["images/Prototype57.png", ""],
       git: "",
     },
     {
       title: "HVScape",
-      thumbnailDesc: "A super simple high school themed VR escape room.",
-      info: "",
+      thumbnailDesc: "Super simple high school themed VR escape room.",
+      modalInfo:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sapien eget mi proin sed libero enim sed faucibus. Suspendisse sed nisi lacus sed viverra. Blandit volutpat maecenas volutpat blandit aliquam etiam erat velit scelerisque. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sapien eget mi proin sed libero enim sed faucibus. Suspendisse sed nisi lacus sed viverra. Blandit volutpat maecenas volutpat blandit aliquam etiam erat velit scelerisque.",
       thumbnailImg: "images/HVScape.png",
-      imgs: ["", ""],
+      imgs: ["images/HVScape.png", ""],
       git: "",
     },
     {
       title: "Dungeon Crawler",
-      thumbnailDesc: "A roguelike game without a good name.", //Use conditional rendering to link this in the card https://en.wikipedia.org/wiki/Roguelike and http://www.roguebasin.com/index.php?title=Berlin_Interpretation
-      info: "",
+      thumbnailDesc:
+        "<a href='https://en.wikipedia.org/wiki/Roguelike'>Roguelike</a> game without a good name.", //Link here
+      modalInfo: "",
       thumbnailImg: "images/DungeonCrawler.png",
-      imgs: ["", ""],
+      imgs: ["images/DungeonCrawler.png", ""], //http://www.roguebasin.com/index.php?title=Berlin_Interpretation
       git: "https://github.com/bcaffee/DungeonCrawler",
     },
   ],
@@ -64,45 +68,48 @@ const mainPage = {
     {
       title: "Fractal Generator",
       thumbnailDesc:
-        "A GUI that produces self-similar tethered radial fractals like the Sierpiński triangle.", //Use conditional rendering to link this in the card https://en.wikipedia.org/wiki/Sierpinski_triangle
-      info: "",
+        "GUI that produces self-similar tethered radial fractals like the <a href='https://en.wikipedia.org/wiki/Sierpinski_triangle'>Sierpiński triangle</a>.", //Link here
+      modalInfo:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sapien eget mi proin sed libero enim sed faucibus. Suspendisse sed nisi lacus sed viverra. Blandit volutpat maecenas volutpat blandit aliquam etiam erat velit scelerisque.",
       thumbnailImg: "images/FractalGenerator.png",
-      imgs: ["", ""],
+      imgs: ["images/FractalGenerator.png", ""],
       git: "https://github.com/bcaffee/FractalGenerator",
     },
     {
       title: "Tic-Tac-Toe RL Agent",
       thumbnailDesc:
-        "A deep-quality learning tic-tac-toe agent that always wins or ties.", //Use conditional rendering to link this in the card https://en.wikipedia.org/wiki/Convolutional_neural_network#Deep_Q-networks
-      info: "",
-      //mainImg: "",
-      //git: "",
+        "<a href='https://en.wikipedia.org/wiki/Convolutional_neural_network#Deep_Q-networks'>Deep-quality learning</a> tic-tac-toe agent that always wins or ties.", //Link here
+      modalInfo: "",
+      imgs: [""],
+      git: "",
     },
     {
       title: "Personal Website",
       thumbnailDesc: "This website made with React and Material-UI.",
-      info: "",
+      modalInfo: "",
+      imgs: [""],
       git: "https://github.com/bcaffee/personal-website",
     },
   ],
 
-  hackathonThumbnails: [
+  hackathons: [
     {
       title: "Roach Coach",
       thumbnailDesc:
-        "A VR food truck simulator where players make sandwiches filling orders submitted through Twitch while PC players can steal ingredients as mice.",
-      info: "",
+        "VR food truck simulator where players make sandwiches filling orders submitted through Twitch while PC players can steal ingredients as mice.",
+      modalInfo:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sapien eget mi proin sed libero enim sed faucibus. Suspendisse sed nisi lacus sed viverra. Blandit volutpat maecenas volutpat blandit aliquam etiam erat velit scelerisque.",
       thumbnailImg: "images/RoachCoach.jpg",
-      imgs: ["", ""],
+      imgs: ["images/RoachCoach.jpg", ""],
       git: "https://github.com/ajmwagar/roachcoach",
     },
     {
       title: "B.LAB",
       thumbnailDesc:
-        "An Android and iOS app that gathers a listing of loan offerings customized to your specific profile.",
-      info: "",
+        "Android and iOS app that gathers a listing of loan offerings customized to your specific profile.",
+      modalInfo: "",
       thumbnailImg: "images/B.LAB.png",
-      imgs: ["", ""],
+      imgs: ["images/B.LAB.png", ""],
       git: "https://github.com/shreystechtips/B.LAB-EvenAPI",
     },
   ],

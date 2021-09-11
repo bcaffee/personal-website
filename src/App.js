@@ -1,6 +1,10 @@
 import React from "react";
 import "./custom.css";
+import { mainPage } from "./site-content.js";
+import { ProjectModal } from "./project-modal.js";
+import { ImageListModal } from "./image-list-modal.js";
 import { FaGithub, FaEnvelope } from "react-icons/fa";
+import GitHubIcon from "@material-ui/icons/GitHub";
 import {
   createTheme,
   makeStyles,
@@ -16,14 +20,7 @@ import {
   useMediaQuery,
   IconButton,
 } from "@material-ui/core";
-import GitHubIcon from "@material-ui/icons/GitHub";
-import { mainPage } from "./site-content.js";
-import { ProjectModal } from "./project-modal.js";
-import ReactHtmlParser, {
-  processNodes,
-  convertNodeToElement,
-  htmlparser2,
-} from "react-html-parser";
+import ReactHtmlParser from "react-html-parser";
 
 export default function App() {
   const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
@@ -39,10 +36,6 @@ export default function App() {
             //dark:
             //contrastText:
           },
-          secondary: {
-            main: "#b2b1cf", //light blueish greyish
-          },
-
           contrastThreshold: 3,
           tonalOffset: 0.2,
         },
@@ -50,20 +43,25 @@ export default function App() {
     [prefersDarkMode]
   );
 
-  const useStyles = makeStyles((style) => ({
+  const useStyles = makeStyles((theme) => ({
     root: {
       backgroundColor: "#222525",
       width: "20rem",
+      // fontFamily: "Raleway",
+      // color: "#efefef",
     },
+    // icon: {
+    //   color: "#efefef",
+    // },
     img: {
       maxHeight: "275px",
     },
   }));
 
   const classes = useStyles();
-  const gProjects = mainPage.gameThumbnails;
-  const oProjects = mainPage.otherThumbnails;
-  const hProjects = mainPage.hackathonThumbnails;
+  const gProjects = mainPage.games;
+  const oProjects = mainPage.other;
+  const hProjects = mainPage.hackathons;
 
   return (
     <div className="App">
@@ -87,10 +85,7 @@ export default function App() {
             </Grid>
 
             <div className="introduction">
-              <p>
-                {mainPage.introductions[0]}
-                {/*ReactHtmlParser(mainPage.introductions[0]) for linking stuff in the intro*/}
-              </p>
+              <p>{mainPage.introductions[0]}</p>
               <p>{mainPage.introductions[1]}</p>
             </div>
             <Grid container spacing={8} className="skills-grid">
@@ -148,26 +143,32 @@ export default function App() {
                   {Object.keys(gProjects).map((project) => (
                     <Grid item key={project}>
                       <Card className={classes.root}>
-                        <CardActionArea>
+                        <ImageListModal project={gProjects[project]} />
+                        {/* <CardActionArea>
                           <CardMedia
-                            image={gProjects[project]["thumbnailImg"]}
+                            image={gProjects[project]["imgs"][0]}
                             component="img"
-                            className={classes.img}
+                            // className={classes.img}
                           />
-                          <CardContent>
-                            <Typography
-                              gutterBottom
-                              variant="h5"
-                              component="h2"
-                              style={{ fontWeight: "bold" }}
-                            >
-                              {gProjects[project]["title"]}
-                            </Typography>
-                            <Typography>
-                              {gProjects[project]["thumbnailDesc"]}
-                            </Typography>
-                          </CardContent>
-                        </CardActionArea>
+                        </CardActionArea> */}
+                        <CardContent>
+                          <Typography
+                            // className="p-grid-card"
+                            gutterBottom
+                            variant="h5"
+                            style={{
+                              fontWeight: "bold",
+                            }}
+                          >
+                            {gProjects[project]["title"]}
+                          </Typography>
+                          <Typography>
+                            {ReactHtmlParser(
+                              gProjects[project]["thumbnailDesc"]
+                            )}
+                          </Typography>
+                        </CardContent>
+
                         <Grid container direction="row" justifyContent="center">
                           <Grid item>
                             {gProjects[project]["git"].trim().length > 0 && (
@@ -198,25 +199,26 @@ export default function App() {
                       <Card className={classes.root}>
                         <CardActionArea>
                           <CardMedia
-                            image={oProjects[project]["thumbnailImg"]}
+                            image={oProjects[project]["imgs"][0]}
                             key={project}
                             component="img"
-                            className={classes.img}
                           />
-                          <CardContent>
-                            <Typography
-                              gutterBottom
-                              variant="h5"
-                              component="h2"
-                              style={{ fontWeight: "bold" }}
-                            >
-                              {oProjects[project]["title"]}
-                            </Typography>
-                            <Typography>
-                              {oProjects[project]["thumbnailDesc"]}
-                            </Typography>
-                          </CardContent>
                         </CardActionArea>
+                        <CardContent>
+                          <Typography
+                            gutterBottom
+                            variant="h5"
+                            style={{ fontWeight: "bold" }}
+                          >
+                            {oProjects[project]["title"]}
+                          </Typography>
+                          <Typography>
+                            {ReactHtmlParser(
+                              oProjects[project]["thumbnailDesc"]
+                            )}
+                          </Typography>
+                        </CardContent>
+
                         <Grid container direction="row" justifyContent="center">
                           <Grid item>
                             <IconButton
@@ -245,25 +247,26 @@ export default function App() {
                       <Card className={classes.root}>
                         <CardActionArea>
                           <CardMedia
-                            image={hProjects[project]["thumbnailImg"]}
+                            image={hProjects[project]["imgs"][0]}
                             key={project}
                             component="img"
-                            className={classes.img}
                           />
-                          <CardContent>
-                            <Typography
-                              gutterBottom
-                              variant="h5"
-                              component="h2"
-                              style={{ fontWeight: "bold" }}
-                            >
-                              {hProjects[project]["title"]}
-                            </Typography>
-                            <Typography>
-                              {hProjects[project]["thumbnailDesc"]}
-                            </Typography>
-                          </CardContent>
                         </CardActionArea>
+                        <CardContent>
+                          <Typography
+                            gutterBottom
+                            variant="h5"
+                            style={{ fontWeight: "bold" }}
+                          >
+                            {hProjects[project]["title"]}
+                          </Typography>
+                          <Typography>
+                            {ReactHtmlParser(
+                              hProjects[project]["thumbnailDesc"]
+                            )}
+                          </Typography>
+                        </CardContent>
+
                         <Grid container direction="row" justifyContent="center">
                           <Grid item>
                             <IconButton
