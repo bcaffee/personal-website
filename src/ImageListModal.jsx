@@ -15,12 +15,12 @@ const useStyles = makeStyles((theme) => ({
   modal: {
     display: "flex",
     alignItems: "center",
-    justifyContent: "center",
+    // justifyContent: "center",
   },
   root: {
-    display: "flex",
-    flexWrap: "wrap",
-    justifyContent: "space-around",
+    // display: "flex",
+    // flexWrap: "wrap",
+    // justifyContent: "space-around",
     overflow: "hidden",
     backgroundColor: theme.palette.background.paper,
   },
@@ -28,13 +28,6 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: "nowrap",
     // Promote the list into its own layer on Chrome. This cost memory but helps keeping high FPS.
     transform: "translateZ(0)",
-  },
-  title: {
-    color: theme.palette.primary.light,
-  },
-  titleBar: {
-    background:
-      "linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)",
   },
   img: {
     maxHeight: "275px",
@@ -57,9 +50,9 @@ export default function ImageListModal({ project }) {
     <div>
       <CardActionArea onClick={handleOpen}>
         <CardMedia
-          image={project.imgs[0]} //project.thumbnailImg
+          image={project.thumbnailImg}
           component="img"
-          // className={classes.img}
+          // className="p-card-img"
         />
       </CardActionArea>
       <Modal
@@ -74,17 +67,25 @@ export default function ImageListModal({ project }) {
           timeout: 500,
         }}
       >
-        <Fade in={open}>
-          <div className={classes.root}>
-            <ImageList className={classes.imageList} cols={2.5}>
-              {project.imgs.map((item) => (
-                <ImageListItem key={item.img}>
-                  <img src={item.img} alt="" />
-                </ImageListItem>
-              ))}
-            </ImageList>
-          </div>
-        </Fade>
+        {project.imgs.length > 0 && (
+          <Fade in={open}>
+            <div className={classes.root}>
+              <ImageList
+                className={classes.imageList}
+                cols={3}
+                rowHeight={300}
+                gap={4}
+                // Use conditional rendering to change the number of cols, rowHeight, gap, etc based on the # of images in the list, check for undefined thumbnailImg
+              >
+                {project.imgs.map((img) => (
+                  <ImageListItem key={img}>
+                    <img src={img} alt="" />
+                  </ImageListItem>
+                ))}
+              </ImageList>
+            </div>
+          </Fade>
+        )}
       </Modal>
     </div>
   );

@@ -1,297 +1,211 @@
 import React from "react";
 import "./custom.css";
 import { mainPage } from "./site-content.js";
-import { ProjectModal } from "./project-modal.js";
-import { ImageListModal } from "./image-list-modal.js";
-import { FaGithub, FaEnvelope } from "react-icons/fa";
-import GitHubIcon from "@material-ui/icons/GitHub";
+import ProjectCard from "./ProjectCard";
+import { createTheme, ThemeProvider } from "@material-ui/core/styles";
 import {
-  createTheme,
-  makeStyles,
-  ThemeProvider,
-} from "@material-ui/core/styles";
-import {
-  Grid,
-  Typography,
-  Card,
-  CardActionArea,
-  CardContent,
-  CardMedia,
-  useMediaQuery,
   IconButton,
+  /*Typography,*/
+  Grid,
+  CssBaseline,
+  useMediaQuery,
 } from "@material-ui/core";
-import ReactHtmlParser from "react-html-parser";
+import { FaGithub, FaEnvelope, FaSun, FaMoon } from "react-icons/fa";
+//FaRegMoon, FaRegSun, RiSunFill, RiMoonFill, CgDarkMode, VscColorMode
 
 export default function App() {
-  const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
+  const darkPreference = useMediaQuery("(prefers-color-scheme: dark)");
 
-  const theme = React.useMemo(
-    () =>
-      createTheme({
+  React.useEffect(() => {
+    var theme = localStorage.getItem("theme");
+    if (theme === null) {
+      setDarkState(darkPreference);
+    } else {
+      theme = theme === "true";
+      setDarkState(theme);
+    }
+  }, [darkPreference]);
+
+  const [darkState, setDarkState] = React.useState(false);
+
+  const theme = (state) =>
+    createTheme(
+      {
         palette: {
-          type: prefersDarkMode ? "dark" : "light",
-          primary: {
-            main: "#6d62ff",
-            //light:
-            //dark:
-            //contrastText:
-          },
+          type: state ? "dark" : "light",
+          // background: { paper: "#F3F3F7" },
+          primary: { main: "#6d62ff" },
           contrastThreshold: 3,
           tonalOffset: 0.2,
         },
-      }),
-    [prefersDarkMode]
-  );
+      },
+      [darkPreference]
+    );
 
-  const useStyles = makeStyles((theme) => ({
-    root: {
-      backgroundColor: "#222525",
-      width: "20rem",
-      // fontFamily: "Raleway",
-      // color: "#efefef",
-    },
-    // icon: {
-    //   color: "#efefef",
-    // },
-    img: {
-      maxHeight: "275px",
-    },
-  }));
+  // const theme = React.useMemo(
+  //   () =>
+  //     createTheme({
+  //       palette: {
+  //         type: prefersDarkMode ? "dark" : "light",
+  //         primary: {
+  //           main: "#6d62ff",
+  //           //project card and modal
+  //           light: "#efefef",
+  //           dark: "#222525",
+  //           //contrastText:
+  //         },
+  //         background: {
+  //           light: "#f6f6f6",
+  //           dark: "#131212",
+  //         },
 
-  const classes = useStyles();
+  //         /*
+  //         A higher value for "tonalOffset" will make calculated values for "light" lighter, and "dark" darker.
+  //         A higher value for "contrastThreshold" increases the point at which a background color is considered
+  //         light, and given a dark "contrastText".
+  //         */
+  //         contrastThreshold: 3,
+  //         tonalOffset: 0.2,
+  //       },
+  //     }),
+  //   [prefersDarkMode]
+  // );
+
+  const darkTheme = theme(darkState);
+
+  const toggleDarkMode = async () => {
+    localStorage.setItem("theme", !darkState);
+    setDarkState(!darkState);
+  };
+
   const gProjects = mainPage.games;
   const oProjects = mainPage.other;
   const hProjects = mainPage.hackathons;
 
   return (
     <div className="App">
-      <ThemeProvider theme={theme}>
-        <div className="container">
-          <div>
-            <div className="site-title">
-              <h1>Ben Caffee</h1>
-            </div>
-            <Grid container spacing={2} className="social-grid">
-              <Grid item className="social">
-                <a href="https://github.com/bcaffee">
-                  <FaGithub />
-                </a>
-              </Grid>
-              <Grid item className="social">
-                <a href="mailto:bncaffee@uw.edu">
-                  <FaEnvelope />
-                </a>
-              </Grid>
-            </Grid>
+      <ThemeProvider theme={darkTheme}>
+        <CssBaseline>
+          <div className="container">
+            <div>
+              <div className="site-title" color="primary">
+                <h1>Ben Caffee</h1>
+              </div>
+              <Grid container spacing={2} className="social-grid">
+                <Grid item className="social">
+                  <a href="https://github.com/bcaffee">
+                    <FaGithub />
+                  </a>
+                </Grid>
+                <Grid item className="social">
+                  <a href="mailto:bncaffee@uw.edu">
+                    <FaEnvelope />
+                  </a>
+                </Grid>
 
-            <div className="introduction">
-              <p>{mainPage.introductions[0]}</p>
-              <p>{mainPage.introductions[1]}</p>
-            </div>
-            <Grid container spacing={8} className="skills-grid">
-              <Grid item>
-                <h4 className="skill-titles">Skills</h4>
-                <div className="skills-note">
-                  (Sorted by proficiency and experience in descending order)
-                </div>
-                <Grid container spacing={2} className="skills">
-                  <ul>
-                    {Object.keys(mainPage.skills).map((skill) => (
-                      <Grid item key={skill}>
-                        <li className="skills">{mainPage.skills[skill]}</li>
-                      </Grid>
-                    ))}
-                    <div className="skill-divider">
-                      ---------------------------------
-                    </div>
-                    {Object.keys(mainPage.otherSkills).map((otherSkill) => (
-                      <Grid item key={otherSkill}>
-                        <li className="skills">
-                          {mainPage.otherSkills[otherSkill]}
-                        </li>
-                      </Grid>
-                    ))}
-                  </ul>
+                <Grid item>
+                  <IconButton
+                    className="dark-mode-button"
+                    onClick={toggleDarkMode}
+                  >
+                    {console.log(darkTheme)}
+                    {darkTheme ? <FaSun /> : <FaMoon />}
+                  </IconButton>
                 </Grid>
               </Grid>
 
-              <Grid item>
-                <h4 className="skill-titles">Goals</h4>
-                <div className="skills-note">
-                  (Skills that I want to improve. Sorted by priority in
-                  descending order)
-                </div>
-                <Grid container spacing={2} className="skills">
-                  <ul>
-                    {Object.keys(mainPage.skillsToImprove).map(
-                      (skillToImprove) => (
-                        <Grid item key={skillToImprove}>
+              <div className="introduction">
+                <p>{mainPage.introductions[0]}</p>
+                <p>{mainPage.introductions[1]}</p>
+              </div>
+              <Grid container spacing={5} className="skills-grid">
+                <Grid item>
+                  <h4 className="skill-titles">Skills</h4>
+                  <div className="skills-note">
+                    (Sorted by proficiency and experience in descending order)
+                  </div>
+                  <Grid container spacing={2} className="skills">
+                    <ul>
+                      {Object.keys(mainPage.skills).map((skill) => (
+                        <Grid item key={skill}>
+                          <li className="skills">{mainPage.skills[skill]}</li>
+                        </Grid>
+                      ))}
+                      <div className="skill-divider">
+                        ---------------------------------
+                      </div>
+                      {Object.keys(mainPage.otherSkills).map((otherSkill) => (
+                        <Grid item key={otherSkill}>
                           <li className="skills">
-                            {mainPage.skillsToImprove[skillToImprove]}
+                            {mainPage.otherSkills[otherSkill]}
                           </li>
                         </Grid>
-                      )
-                    )}
-                  </ul>
+                      ))}
+                    </ul>
+                  </Grid>
+                </Grid>
+
+                <Grid item>
+                  <h4 className="skill-titles">Goals</h4>
+                  <div className="skills-note">
+                    (Skills that I want to improve. Sorted by priority in
+                    descending order)
+                  </div>
+                  <Grid container spacing={2} className="skills">
+                    <ul>
+                      {Object.keys(mainPage.skillsToImprove).map(
+                        (skillToImprove) => (
+                          <Grid item key={skillToImprove}>
+                            <li className="skills">
+                              {mainPage.skillsToImprove[skillToImprove]}
+                            </li>
+                          </Grid>
+                        )
+                      )}
+                    </ul>
+                  </Grid>
                 </Grid>
               </Grid>
-            </Grid>
-            <Grid container spacing={2} className="projects-grid">
-              <Grid item>
-                <h4>Game Projects</h4>
-                <Grid container spacing={2} direction="column">
-                  {Object.keys(gProjects).map((project) => (
-                    <Grid item key={project}>
-                      <Card className={classes.root}>
-                        <ImageListModal project={gProjects[project]} />
-                        {/* <CardActionArea>
-                          <CardMedia
-                            image={gProjects[project]["imgs"][0]}
-                            component="img"
-                            // className={classes.img}
-                          />
-                        </CardActionArea> */}
-                        <CardContent>
-                          <Typography
-                            // className="p-grid-card"
-                            gutterBottom
-                            variant="h5"
-                            style={{
-                              fontWeight: "bold",
-                            }}
-                          >
-                            {gProjects[project]["title"]}
-                          </Typography>
-                          <Typography>
-                            {ReactHtmlParser(
-                              gProjects[project]["thumbnailDesc"]
-                            )}
-                          </Typography>
-                        </CardContent>
+              <Grid container spacing={2} className="projects-grid">
+                <Grid item>
+                  <h4>Game Projects</h4>
+                  <Grid container spacing={2} direction="column">
+                    {Object.keys(gProjects).map((project) => (
+                      <Grid item key={project}>
+                        <ProjectCard project={gProjects[project]}></ProjectCard>
+                      </Grid>
+                    ))}
+                  </Grid>
+                </Grid>
 
-                        <Grid container direction="row" justifyContent="center">
-                          <Grid item>
-                            {gProjects[project]["git"].trim().length > 0 && (
-                              <IconButton
-                                onClick={function click() {
-                                  window.open(gProjects[project]["git"]);
-                                }}
-                              >
-                                <GitHubIcon />
-                              </IconButton>
-                            )}
-                          </Grid>
-                          <Grid item>
-                            <ProjectModal project={gProjects[project]} />
-                          </Grid>
-                        </Grid>
-                      </Card>
-                    </Grid>
-                  ))}
+                <Grid item>
+                  <h4>Other</h4>
+                  <Grid container spacing={2} direction="column">
+                    {Object.keys(oProjects).map((project) => (
+                      <Grid item key={project}>
+                        <ProjectCard project={oProjects[project]}></ProjectCard>
+                      </Grid>
+                    ))}
+                  </Grid>
+                </Grid>
+
+                <Grid item>
+                  <h4>Hackathons</h4>
+                  <Grid container spacing={2} direction="column">
+                    {Object.keys(hProjects).map((project) => (
+                      <Grid item key={project}>
+                        <ProjectCard project={hProjects[project]}></ProjectCard>
+                      </Grid>
+                    ))}
+                  </Grid>
                 </Grid>
               </Grid>
-
-              <Grid item>
-                <h4>Other</h4>
-                <Grid container spacing={2} direction="column">
-                  {Object.keys(oProjects).map((project) => (
-                    <Grid item key={project}>
-                      <Card className={classes.root}>
-                        <CardActionArea>
-                          <CardMedia
-                            image={oProjects[project]["imgs"][0]}
-                            key={project}
-                            component="img"
-                          />
-                        </CardActionArea>
-                        <CardContent>
-                          <Typography
-                            gutterBottom
-                            variant="h5"
-                            style={{ fontWeight: "bold" }}
-                          >
-                            {oProjects[project]["title"]}
-                          </Typography>
-                          <Typography>
-                            {ReactHtmlParser(
-                              oProjects[project]["thumbnailDesc"]
-                            )}
-                          </Typography>
-                        </CardContent>
-
-                        <Grid container direction="row" justifyContent="center">
-                          <Grid item>
-                            <IconButton
-                              onClick={function click() {
-                                window.open(oProjects[project]["git"]);
-                              }}
-                            >
-                              <GitHubIcon />
-                            </IconButton>
-                          </Grid>
-                          <Grid item>
-                            <ProjectModal project={oProjects[project]} />
-                          </Grid>
-                        </Grid>
-                      </Card>
-                    </Grid>
-                  ))}
-                </Grid>
-              </Grid>
-
-              <Grid item>
-                <h4>Hackathons</h4>
-                <Grid container spacing={2} direction="column">
-                  {Object.keys(hProjects).map((project) => (
-                    <Grid item key={project}>
-                      <Card className={classes.root}>
-                        <CardActionArea>
-                          <CardMedia
-                            image={hProjects[project]["imgs"][0]}
-                            key={project}
-                            component="img"
-                          />
-                        </CardActionArea>
-                        <CardContent>
-                          <Typography
-                            gutterBottom
-                            variant="h5"
-                            style={{ fontWeight: "bold" }}
-                          >
-                            {hProjects[project]["title"]}
-                          </Typography>
-                          <Typography>
-                            {ReactHtmlParser(
-                              hProjects[project]["thumbnailDesc"]
-                            )}
-                          </Typography>
-                        </CardContent>
-
-                        <Grid container direction="row" justifyContent="center">
-                          <Grid item>
-                            <IconButton
-                              onClick={function click() {
-                                window.open(hProjects[project]["git"]);
-                              }}
-                            >
-                              <GitHubIcon />
-                            </IconButton>
-                          </Grid>
-                          <Grid item>
-                            <ProjectModal project={hProjects[project]} />
-                          </Grid>
-                        </Grid>
-                      </Card>
-                    </Grid>
-                  ))}
-                </Grid>
-              </Grid>
-            </Grid>
+            </div>
           </div>
-        </div>
-        <div className="footer">
-          Copyright © {new Date().getFullYear()} Ben Caffee.
-        </div>
+          <div className="footer">
+            Copyright © {new Date().getFullYear()} Ben Caffee.
+          </div>
+        </CssBaseline>
       </ThemeProvider>
     </div>
   );

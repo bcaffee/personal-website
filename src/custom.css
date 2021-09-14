@@ -1,13 +1,35 @@
 @import url("https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@100&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
 
+/* COLOR SCHEME */
+
+/* Define styles for the default root window element */
+/* :root {
+  --accent-color: #6d62ff;
+  --background-color-primary: #f6f6f6;
+  --background-color-secondary: #efefef;
+  --text-primary-color: #222525;
+  background-color: var(--background-color-primary);
+} */
+
+/* Define styles for the root window with dark mode preference */
+/* :root.dark-theme {
+  --accent-color: #6d62ff;
+  --background-color-primary: #131212;
+  --background-color-secondary: #222525;
+  --text-primary-color: #efefef;
+  background-color: var(--background-color-primary);
+} */
+
 /* HEADER */
 
 .site-title h1 {
   font-family: "Alumni Sans", sans-serif;
   font-weight: 1000;
-  color: #efefef;
+  /* color: #efefef; */
+  /* color: var(--text-primary-color); */
   font-size: 6rem;
+  margin-top: 1rem;
   margin-bottom: 1rem;
   text-align: center;
 }
@@ -23,17 +45,21 @@
 }
 
 .social a:hover {
-  color: #efefef;
+  /* color: #efefef; */
+}
+
+.dark-mode-button {
+  
 }
 
 /* CONTENT */
 
 .introduction {
   font-family: "Raleway", sans-serif;
-  color: #efefef;
+  /* color: #efefef; */
   font-size: 1.35rem;
   /* margin-bottom: 1rem; */
-  text-align: left;
+  /* text-align: left; */
 }
 
 .skills-grid {
@@ -42,26 +68,21 @@
   justify-content: center;
 }
 
-.skills-paper {
-  color: #222525;
-}
-
 .skill-titles {
   color: #6d62ff;
   font-size: 2.25rem;
   margin-bottom: 0.25rem;
-  /* justify-content: left; */
 }
 
 .skills-note {
-  color: #efefef;
+  /* color: #efefef; */
   font-size: 1rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
 
 .skills {
-  color: #efefef;
+  /* color: #efefef; */
   font-size: 1.25rem;
   margin-bottom: 1rem;
 }
@@ -76,24 +97,47 @@
   color: #6d62ff;
   flex-direction: row;
   justify-content: center;
+  /* align-items: stretch !important; */
   text-align: center;
 }
 
-/* .project-icons {
-  color: #efefef;
-} */
+.p-grid-card {
+  /* background-color: #222525; */
+  font-weight: bold !important;
+  font-family: "Raleway", sans-serif !important;
+  /* width: 20rem; */
+}
 
-/* .p-grid-card {
-  background-color: "#222525";
-  font-family: "Raleway", sans-serif;
-  width: "20rem";
+.root-object {
+  /* background-color: #222525 !important; */
+  width: 20rem;
 }
 
 .p-card-img {
-  max-height: "275px";
+  max-height: 275px !important;
 }
 
-.modal {
+.p-icons {
+  /* color: #efefef; */
+}
+
+a {
+  color: #6d62ff;
+}
+
+a:visited {
+  color: #6d62ff;
+}
+
+a:active {
+  color: #5c52ec;
+}
+
+b {
+  
+}
+
+/* .modal {
   display: "flex";
   align-items: "center";
   justify-content: "center";
@@ -112,27 +156,19 @@
   margin-right: 400;
 } */
 
-/* COLOR SCHEME */
-
-
-
-/* b:visited {
-  color: #8ebf42;
-} */
-
-/* GLOBAL */
-
 .container {
-  max-width: 1000px; /*1250*/
+  max-width: 1000px;
   margin: auto;
 }
 
 body {
-  background-color: #131212;
+  /* background-color: var(--background-color-primary); */
+  /* background-color: #131212; */
 }
 
 .footer {
-  color: #efefef;
+  /* color: #efefef; */
+  /* background-color: var(--background-color-primary); !important */
   font-family: "Raleway", sans-serif;
   margin-top: 7rem;
   margin-bottom: 5.5rem;

@@ -6,9 +6,10 @@ const mainPage = {
 
   skills: [
     "Java Programming",
-    "C# Game Development",
+    "C# Game Development (Unity)",
     "ML (Python)",
-    "JavaScript",
+    "JavaScript (General + React)",
+    "HTML and CSS Web Design",
   ],
   otherSkills: [
     "Git",
@@ -30,9 +31,8 @@ const mainPage = {
         "Mobile match-three game with fast paced strategic gameplay and a little tetris twist.",
       modalInfo:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sapien eget mi proin sed libero enim sed faucibus. Suspendisse sed nisi lacus sed viverra. Blandit volutpat maecenas volutpat blandit aliquam etiam erat velit scelerisque. Donec adipiscing tristique risus nec feugiat in fermentum posuere. Malesuada nunc vel risus commodo viverra maecenas accumsan lacus. Et odio pellentesque diam volutpat. Arcu bibendum at varius vel pharetra vel. Eu lobortis elementum nibh tellus molestie nunc. Eros in cursus turpis massa. Risus feugiat in ante metus dictum at tempor.       Molestie nunc non blandit massa enim nec dui nunc mattis. Feugiat nibh sed pulvinar proin gravida hendrerit lectus a. Posuere ac ut consequat semper. Et malesuada fames ac turpis egestas maecenas pharetra convallis posuere. Nulla pharetra diam sit amet nisl suscipit adipiscing. Augue ut lectus arcu bibendum at varius vel pharetra vel. In ante metus dictum at tempor commodo ullamcorper a lacus. Feugiat in ante metus dictum. Faucibus scelerisque eleifend donec pretium vulputate sapien. Sed vulputate odio ut enim blandit volutpat maecenas. Erat pellentesque adipiscing commodo elit at imperdiet dui accumsan.",
-
       thumbnailImg: "images/HouseMatch.png",
-      imgs: ["images/HouseMatch.png", ""],
+      // imgs: [""],
       git: "",
     },
     {
@@ -41,7 +41,7 @@ const mainPage = {
       modalInfo:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sapien eget mi proin sed libero enim sed faucibus. Suspendisse sed nisi lacus sed viverra. Blandit volutpat maecenas volutpat blandit aliquam etiam erat velit scelerisque.",
       thumbnailImg: "images/Prototype57.png",
-      imgs: ["images/Prototype57.png", ""],
+      // imgs: [""], Add multiple images
       git: "",
     },
     {
@@ -50,16 +50,16 @@ const mainPage = {
       modalInfo:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sapien eget mi proin sed libero enim sed faucibus. Suspendisse sed nisi lacus sed viverra. Blandit volutpat maecenas volutpat blandit aliquam etiam erat velit scelerisque. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sapien eget mi proin sed libero enim sed faucibus. Suspendisse sed nisi lacus sed viverra. Blandit volutpat maecenas volutpat blandit aliquam etiam erat velit scelerisque.",
       thumbnailImg: "images/HVScape.png",
-      imgs: ["images/HVScape.png", ""],
+      // imgs: [""], Add library and second classroom image
       git: "",
     },
     {
       title: "Dungeon Crawler",
       thumbnailDesc:
-        "<a href='https://en.wikipedia.org/wiki/Roguelike'>Roguelike</a> game without a good name.", //Link here
-      modalInfo: "",
-      thumbnailImg: "images/DungeonCrawler.png",
-      imgs: ["images/DungeonCrawler.png", ""], //http://www.roguebasin.com/index.php?title=Berlin_Interpretation
+        "<div className='link'> <a href='https://en.wikipedia.org/wiki/Roguelike'>Roguelike</a> </div> game without a good name.", //http://www.roguebasin.com/index.php?title=Berlin_Interpretation
+      modalInfo: "More info will be added soon.",
+      // thumbnailImg: "images/DungeonCrawler.png",
+      // imgs: [""],
       git: "https://github.com/bcaffee/DungeonCrawler",
     },
   ],
@@ -68,26 +68,26 @@ const mainPage = {
     {
       title: "Fractal Generator",
       thumbnailDesc:
-        "GUI that produces self-similar tethered radial fractals like the <a href='https://en.wikipedia.org/wiki/Sierpinski_triangle'>Sierpiński triangle</a>.", //Link here
+        "GUI that produces self-similar tethered radial fractals like the <a href='https://en.wikipedia.org/wiki/Sierpinski_triangle'>Sierpiński triangle</a>.",
       modalInfo:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sapien eget mi proin sed libero enim sed faucibus. Suspendisse sed nisi lacus sed viverra. Blandit volutpat maecenas volutpat blandit aliquam etiam erat velit scelerisque.",
       thumbnailImg: "images/FractalGenerator.png",
-      imgs: ["images/FractalGenerator.png", ""],
+      // imgs: [""],
       git: "https://github.com/bcaffee/FractalGenerator",
     },
     {
       title: "Tic-Tac-Toe RL Agent",
       thumbnailDesc:
-        "<a href='https://en.wikipedia.org/wiki/Convolutional_neural_network#Deep_Q-networks'>Deep-quality learning</a> tic-tac-toe agent that always wins or ties.", //Link here
-      modalInfo: "",
-      imgs: [""],
+        "<a href='https://en.wikipedia.org/wiki/Convolutional_neural_network#Deep_Q-networks'>Deep-quality learning</a> tic-tac-toe agent that always wins or ties.",
+      modalInfo: "More info will be added soon.",
+      // imgs: [""],
       git: "",
     },
     {
       title: "Personal Website",
-      thumbnailDesc: "This website made with React and Material-UI.",
-      modalInfo: "",
-      imgs: [""],
+      thumbnailDesc: "This website.",
+      modalInfo: "More info will be added soon.",
+      // imgs: [""],
       git: "https://github.com/bcaffee/personal-website",
     },
   ],
@@ -100,16 +100,16 @@ const mainPage = {
       modalInfo:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sapien eget mi proin sed libero enim sed faucibus. Suspendisse sed nisi lacus sed viverra. Blandit volutpat maecenas volutpat blandit aliquam etiam erat velit scelerisque.",
       thumbnailImg: "images/RoachCoach.jpg",
-      imgs: ["images/RoachCoach.jpg", ""],
+      // imgs: [""], Add 2 side shots
       git: "https://github.com/ajmwagar/roachcoach",
     },
     {
       title: "B.LAB",
       thumbnailDesc:
         "Android and iOS app that gathers a listing of loan offerings customized to your specific profile.",
-      modalInfo: "",
+      modalInfo: "More info will be added soon.",
       thumbnailImg: "images/B.LAB.png",
-      imgs: ["images/B.LAB.png", ""],
+      // imgs: [""], Add 2 images of the different tabs
       git: "https://github.com/shreystechtips/B.LAB-EvenAPI",
     },
   ],
