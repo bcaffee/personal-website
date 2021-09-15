@@ -7,8 +7,9 @@ import {
   IconButton,
   Grid,
   CssBaseline,
+  Tooltip,
   // useMediaQuery,
-  Paper,
+  // Paper,
 } from "@material-ui/core";
 import { FaGithub, FaEnvelope, FaSun, FaMoon } from "react-icons/fa";
 
@@ -16,6 +17,7 @@ export default function App() {
   // const darkPreference = useMediaQuery("(prefers-color-scheme: dark)"); // why is this always true?
   // console.log(darkPreference);
 
+  //Theme is not switching to browser preference
   // React.useEffect(() => {
   //   var theme = localStorage.getItem("theme");
   //   if (theme === null) {
@@ -63,9 +65,16 @@ export default function App() {
 
   const lightTheme = createTheme({
     palette: {
+      // primary: {
+      //   main: "#6d62ff",
+      // },
       background: {
         // default: "#f6f6f6",
         // paper: "#efefef",
+      },
+      action: {
+        active: "#000000",
+        // doesn't work - hover: "#6d62ff",
       },
     },
   });
@@ -73,7 +82,7 @@ export default function App() {
   const darkTheme = createTheme({
     palette: {
       // primary: {
-      //   main:
+      //   main: "#6d62ff",
       // },
       background: {
         default: "#131212",
@@ -84,24 +93,10 @@ export default function App() {
       },
       action: {
         active: "#ffffff",
+        //doesn't work - hover: "#6d62ff",
       },
-      // button: {
-      //   primary: "#ffffff",
-      // },
-      // overrides: {
-      //   MuiButton: {
-      //     primary: "#ffffff",
-      //   },
-      // },
     },
   });
-
-  // const toggleDarkMode = async () => {
-  //   localStorage.setItem("theme", !darkState);
-  //   setDarkState(!darkState);
-  // };
-
-  // const darkTheme = theme(darkState);
 
   const gProjects = mainPage.games;
   const oProjects = mainPage.other;
@@ -116,11 +111,11 @@ export default function App() {
               <div className="site-title">
                 <h1>Ben Caffee</h1>
               </div>
-              <Paper className="dark-mode-button">
+              {/* <Paper className="dark-mode-button-2">
                 <IconButton onClick={() => setDarkMode(!darkMode)}>
                   {darkMode ? <FaSun /> : <FaMoon />}
                 </IconButton>
-              </Paper>
+              </Paper> */}
               <Grid container spacing={2} className="social-grid">
                 <Grid item className="social">
                   <a href="https://github.com/bcaffee">
@@ -132,9 +127,13 @@ export default function App() {
                     <FaEnvelope />
                   </a>
                 </Grid>
-                <IconButton onClick={() => setDarkMode(!darkMode)}>
-                  {darkMode ? <FaSun /> : <FaMoon />}
-                </IconButton>
+                {/* <Paper className="dark-mode-button"> */}
+                <Tooltip title="Theme Toggle" placement="right-start">
+                  <IconButton onClick={() => setDarkMode(!darkMode)}>
+                    {darkMode ? <FaSun /> : <FaMoon />}
+                  </IconButton>
+                </Tooltip>
+                {/* </Paper> */}
               </Grid>
 
               <div className="introduction">
@@ -174,7 +173,7 @@ export default function App() {
                     (Skills I want to improve. Sorted by priority in descending
                     order)
                   </div>
-                  <Grid container spacing={2}>
+                  <Grid container spacing={2} className="skills">
                     <ul>
                       {Object.keys(mainPage.skillsToImprove).map(
                         (skillToImprove) => (

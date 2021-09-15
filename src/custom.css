@@ -23,12 +23,17 @@
 }
 
 .social a:hover {
-  /* color: #efefef; */
+  color: #efefef;
 }
 
-.dark-mode-button {
+/* .dark-mode-button {
+  max-width: 40px;
+  max-height: 40px;
+} */
+
+/* .dark-mode-button-2 {
   position: absolute;
-}
+} */
 
 /* CONTENT */
 
@@ -93,14 +98,11 @@ a {
 }
 
 a:visited {
-  color: #6d62ff;
+  /* color: #fff; */
 }
 
 a:active {
   color: #5c52ec;
-}
-
-b {
 }
 
 /* .modal {
