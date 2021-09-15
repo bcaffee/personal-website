@@ -13,9 +13,6 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
   },
   paper: {
-    // backgroundColor: "#222525",
-    fontFamily: "Raleway",
-    // color: "#efefef",
     // border: "1px solid #000",
     boxShadow: theme.shadows[5],
     padding: theme.spacing(0, 5, 1),
@@ -23,6 +20,9 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: 200,
     marginLeft: 400,
     marginRight: 400,
+  },
+  title: {
+    fontFamily: "Raleway",
   },
 }));
 
@@ -57,7 +57,9 @@ export default function ProjectModal({ project }) {
       >
         <Fade in={open}>
           <Paper className={classes.paper}>
-            <h2 id="title">{project.title}</h2>
+            <h2 className={classes.title} id="title">
+              {project.title}
+            </h2>
             <p id="info">{ReactHtmlParser(project.modalInfo)}</p>
           </Paper>
         </Fade>

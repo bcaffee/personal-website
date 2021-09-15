@@ -5,78 +5,103 @@ import ProjectCard from "./ProjectCard";
 import { createTheme, ThemeProvider } from "@material-ui/core/styles";
 import {
   IconButton,
-  /*Typography,*/
   Grid,
   CssBaseline,
-  useMediaQuery,
+  // useMediaQuery,
+  Paper,
 } from "@material-ui/core";
 import { FaGithub, FaEnvelope, FaSun, FaMoon } from "react-icons/fa";
-//FaRegMoon, FaRegSun, RiSunFill, RiMoonFill, CgDarkMode, VscColorMode
 
 export default function App() {
-  const darkPreference = useMediaQuery("(prefers-color-scheme: dark)");
+  // const darkPreference = useMediaQuery("(prefers-color-scheme: dark)"); // why is this always true?
+  // console.log(darkPreference);
 
-  React.useEffect(() => {
-    var theme = localStorage.getItem("theme");
-    if (theme === null) {
-      setDarkState(darkPreference);
-    } else {
-      theme = theme === "true";
-      setDarkState(theme);
-    }
-  }, [darkPreference]);
+  // React.useEffect(() => {
+  //   var theme = localStorage.getItem("theme");
+  //   if (theme === null) {
+  //     setDarkState(darkPreference);
+  //   } else {
+  //     theme = theme === "true";
+  //     setDarkState(theme);
+  //   }
+  // }, [darkPreference]);
 
-  const [darkState, setDarkState] = React.useState(false);
+  //Causes the button toggle to be stuck
+  // if (
+  //   window.matchMedia &&
+  //   window.matchMedia("(prefers-color-scheme: dark)").matches
+  // ) {
+  //   darkMode = true;
+  // }
 
-  const theme = (state) =>
-    createTheme(
-      {
-        palette: {
-          type: state ? "dark" : "light",
-          // background: { paper: "#F3F3F7" },
-          primary: { main: "#6d62ff" },
-          contrastThreshold: 3,
-          tonalOffset: 0.2,
-        },
-      },
-      [darkPreference]
-    );
+  const [darkMode, setDarkMode] = React.useState(true);
 
   // const theme = React.useMemo(
   //   () =>
   //     createTheme({
   //       palette: {
-  //         type: prefersDarkMode ? "dark" : "light",
-  //         primary: {
-  //           main: "#6d62ff",
-  //           //project card and modal
-  //           light: "#efefef",
-  //           dark: "#222525",
-  //           //contrastText:
-  //         },
-  //         background: {
-  //           light: "#f6f6f6",
-  //           dark: "#131212",
-  //         },
+  //         type: darkMode ? "dark" : "light",
+  //         // primary: {
+  //         //   main: "#6d62ff",
+  //         // },
 
-  //         /*
-  //         A higher value for "tonalOffset" will make calculated values for "light" lighter, and "dark" darker.
-  //         A higher value for "contrastThreshold" increases the point at which a background color is considered
-  //         light, and given a dark "contrastText".
-  //         */
-  //         contrastThreshold: 3,
-  //         tonalOffset: 0.2,
+  //         background: {
+  //           paper: {
+  //             light: '#efefef',
+  //             dark: '#222525',
+  //           },
+
+  //           default: {
+  //             // light: "#f6f6f6",
+  //             // dark: "#131212",
+  //           },
+  //         },
   //       },
   //     }),
-  //   [prefersDarkMode]
+  //   [darkMode]
   // );
 
-  const darkTheme = theme(darkState);
+  const lightTheme = createTheme({
+    palette: {
+      background: {
+        // default: "#f6f6f6",
+        // paper: "#efefef",
+      },
+    },
+  });
 
-  const toggleDarkMode = async () => {
-    localStorage.setItem("theme", !darkState);
-    setDarkState(!darkState);
-  };
+  const darkTheme = createTheme({
+    palette: {
+      // primary: {
+      //   main:
+      // },
+      background: {
+        default: "#131212",
+        paper: "#222525",
+      },
+      text: {
+        primary: "#ffffff",
+      },
+      action: {
+        active: "#ffffff",
+      },
+      // button: {
+      //   primary: "#ffffff",
+      // },
+      // overrides: {
+      //   MuiButton: {
+      //     primary: "#ffffff",
+      //   },
+      // },
+    },
+  });
+
+  // const toggleDarkMode = async () => {
+  //   localStorage.setItem("theme", !darkState);
+  //   setDarkState(!darkState);
+  // };
+
+  // const darkTheme = theme(darkState);
 
   const gProjects = mainPage.games;
   const oProjects = mainPage.other;
@@ -84,13 +109,18 @@ export default function App() {
 
   return (
     <div className="App">
-      <ThemeProvider theme={darkTheme}>
+      <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
         <CssBaseline>
           <div className="container">
             <div>
-              <div className="site-title" color="primary">
+              <div className="site-title">
                 <h1>Ben Caffee</h1>
               </div>
+              <Paper className="dark-mode-button">
+                <IconButton onClick={() => setDarkMode(!darkMode)}>
+                  {darkMode ? <FaSun /> : <FaMoon />}
+                </IconButton>
+              </Paper>
               <Grid container spacing={2} className="social-grid">
                 <Grid item className="social">
                   <a href="https://github.com/bcaffee">
@@ -102,29 +132,22 @@ export default function App() {
                     <FaEnvelope />
                   </a>
                 </Grid>
-
-                <Grid item>
-                  <IconButton
-                    className="dark-mode-button"
-                    onClick={toggleDarkMode}
-                  >
-                    {console.log(darkTheme)}
-                    {darkTheme ? <FaSun /> : <FaMoon />}
-                  </IconButton>
-                </Grid>
+                <IconButton onClick={() => setDarkMode(!darkMode)}>
+                  {darkMode ? <FaSun /> : <FaMoon />}
+                </IconButton>
               </Grid>
 
               <div className="introduction">
                 <p>{mainPage.introductions[0]}</p>
                 <p>{mainPage.introductions[1]}</p>
               </div>
-              <Grid container spacing={5} className="skills-grid">
+              <Grid container spacing={10} className="skills-grid">
                 <Grid item>
                   <h4 className="skill-titles">Skills</h4>
                   <div className="skills-note">
-                    (Sorted by proficiency and experience in descending order)
+                    (Sorted by experience in descending order)
                   </div>
-                  <Grid container spacing={2} className="skills">
+                  <Grid container spacing={2}>
                     <ul>
                       {Object.keys(mainPage.skills).map((skill) => (
                         <Grid item key={skill}>
@@ -148,10 +171,10 @@ export default function App() {
                 <Grid item>
                   <h4 className="skill-titles">Goals</h4>
                   <div className="skills-note">
-                    (Skills that I want to improve. Sorted by priority in
-                    descending order)
+                    (Skills I want to improve. Sorted by priority in descending
+                    order)
                   </div>
-                  <Grid container spacing={2} className="skills">
+                  <Grid container spacing={2}>
                     <ul>
                       {Object.keys(mainPage.skillsToImprove).map(
                         (skillToImprove) => (

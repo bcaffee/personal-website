@@ -20,7 +20,7 @@ import ReactHtmlParser from "react-html-parser";
 export default function ProjectCard({ project }) {
   return (
     <div>
-      <Card className="root-object">
+      <Card className="p-card-root">
         {/* <ImageListModal imgs={project.imgs} /> */}
         <CardActionArea>
           <CardMedia
@@ -30,10 +30,12 @@ export default function ProjectCard({ project }) {
           />
         </CardActionArea>
         <CardContent>
-          <Typography className="p-grid-card" gutterBottom variant="h5">
+          <Typography className="p-card-title" gutterBottom variant="h5">
             {project.title}
           </Typography>
-          <Typography>{ReactHtmlParser(project.thumbnailDesc)}</Typography>
+          <Typography>
+            {ReactHtmlParser(project.thumbnailDesc)}
+          </Typography>
         </CardContent>
 
         <Grid container direction="row" justifyContent="center">
