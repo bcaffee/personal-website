@@ -38,31 +38,6 @@ export default function App() {
 
   const [darkMode, setDarkMode] = React.useState(true);
 
-  // const theme = React.useMemo(
-  //   () =>
-  //     createTheme({
-  //       palette: {
-  //         type: darkMode ? "dark" : "light",
-  //         // primary: {
-  //         //   main: "#6d62ff",
-  //         // },
-
-  //         background: {
-  //           paper: {
-  //             light: '#efefef',
-  //             dark: '#222525',
-  //           },
-
-  //           default: {
-  //             // light: "#f6f6f6",
-  //             // dark: "#131212",
-  //           },
-  //         },
-  //       },
-  //     }),
-  //   [darkMode]
-  // );
-
   const lightTheme = createTheme({
     palette: {
       // primary: {
@@ -70,11 +45,10 @@ export default function App() {
       // },
       background: {
         // default: "#f6f6f6",
-        // paper: "#efefef",
       },
       action: {
         active: "#000000",
-        // doesn't work - hover: "#6d62ff",
+        // hover: "#6d62ff",
       },
     },
   });
@@ -86,7 +60,8 @@ export default function App() {
       // },
       background: {
         default: "#131212",
-        paper: "#222525",
+        paper: "#303030",
+        // paper: "#222525"
       },
       text: {
         primary: "#ffffff",
@@ -102,6 +77,14 @@ export default function App() {
   const oProjects = mainPage.other;
   const hProjects = mainPage.hackathons;
 
+  var socialMode;
+
+  if (darkMode) {
+    socialMode = "social-dark";
+  } else {
+    socialMode = "social-light";
+  }
+
   return (
     <div className="App">
       <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
@@ -111,18 +94,13 @@ export default function App() {
               <div className="site-title">
                 <h1>Ben Caffee</h1>
               </div>
-              {/* <Paper className="dark-mode-button-2">
-                <IconButton onClick={() => setDarkMode(!darkMode)}>
-                  {darkMode ? <FaSun /> : <FaMoon />}
-                </IconButton>
-              </Paper> */}
               <Grid container spacing={2} className="social-grid">
-                <Grid item className="social">
+                <Grid item className={socialMode}>
                   <a href="https://github.com/bcaffee">
                     <FaGithub />
                   </a>
                 </Grid>
-                <Grid item className="social">
+                <Grid item className={socialMode}>
                   <a href="mailto:bncaffee@uw.edu">
                     <FaEnvelope />
                   </a>

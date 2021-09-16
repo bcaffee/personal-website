@@ -18,12 +18,20 @@
   margin-bottom: 1rem !important;
 }
 
-.social a {
+.social-dark {
   color: #6d62ff;
 }
 
-.social a:hover {
+.social-dark a:hover {
   color: #efefef;
+}
+
+.social-light {
+  color: #6d62ff;
+}
+
+.social-light a:hover {
+  color: #000000;
 }
 
 /* .dark-mode-button {
@@ -97,10 +105,6 @@ a {
   color: #6d62ff;
 }
 
-a:visited {
-  /* color: #fff; */
-}
-
 a:active {
   color: #5c52ec;
 }
@@ -125,10 +129,6 @@ a:active {
   max-width: 1000px;
   margin: auto;
 }
-
-/* body {
-  background-color: #131212;
-} */
 
 .footer {
   font-family: "Raleway", sans-serif;

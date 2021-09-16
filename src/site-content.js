@@ -53,7 +53,7 @@ const mainPage = {
     {
       title: "Dungeon Crawler",
       thumbnailDesc:
-        "<div className='link'> <a href='https://en.wikipedia.org/wiki/Roguelike'>Roguelike</a> </div> game without a good name.", //http://www.roguebasin.com/index.php?title=Berlin_Interpretation
+        "<a href='https://en.wikipedia.org/wiki/Roguelike'>Roguelike</a> game without a good name.", //http://www.roguebasin.com/index.php?title=Berlin_Interpretation
       modalInfo: "More info to be posted.",
       // thumbnailImg: "images/DungeonCrawler.png",
       // imgs: [""],
