@@ -20,7 +20,7 @@ import ReactHtmlParser from "react-html-parser";
 export default function ProjectCard({ project }) {
   return (
     <div>
-      <Card className="p-card-root">
+      <Card elevation={2} className="p-card-root">
         {/* <ImageListModal imgs={project.imgs} /> */}
         <CardActionArea>
           <CardMedia

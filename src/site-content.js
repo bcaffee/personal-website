@@ -31,7 +31,6 @@ const mainPage = {
         "Mobile match-three game with fast paced strategic gameplay and a little tetris twist.",
       modalInfo: "More info to be posted.",
       thumbnailImg: "images/HouseMatch.png",
-      // imgs: [""],
       git: "",
     },
     {
@@ -44,11 +43,11 @@ const mainPage = {
     },
     {
       title: "HVScape",
-      thumbnailDesc: "Super simple high school themed VR escape room.",
+      thumbnailDesc: "Super simple high school-themed VR escape room.",
       modalInfo: "More info to be posted.",
       thumbnailImg: "images/HVScape.png",
-      // imgs: [""], Add library and second classroom image
-      git: "",
+      // imgs: [""], Add library and second classroom image to github README
+      git: "https://github.com/bcaffee/HVScape",
     },
     {
       title: "Dungeon Crawler",
@@ -68,16 +67,16 @@ const mainPage = {
         "GUI that produces self-similar tethered radial fractals like the <a href='https://en.wikipedia.org/wiki/Sierpinski_triangle'>Sierpiński triangle</a>.",
       modalInfo: "More info to be posted.",
       thumbnailImg: "images/FractalGenerator.png",
-      // imgs: [""],
+      // imgs: [""], Add more fractl images to github README
       git: "https://github.com/bcaffee/FractalGenerator",
     },
     {
       title: "Tic-Tac-Toe RL Agent",
       thumbnailDesc:
-        "<a href='https://en.wikipedia.org/wiki/Convolutional_neural_network#Deep_Q-networks'>Deep-quality learning</a> tic-tac-toe agent that always wins or ties.",
+        "<a href='https://en.wikipedia.org/wiki/Convolutional_neural_network#Deep_Q-networks'>Deep-quality learning</a> tic-tac-toe agent.",
       modalInfo: "More info to be posted.",
       // imgs: [""],
-      git: "",
+      git: "https://github.com/bcaffee/T-T-T_DQN",
     },
     {
       title: "Personal Website",
@@ -93,7 +92,8 @@ const mainPage = {
       title: "Roach Coach",
       thumbnailDesc:
         "VR food truck simulator where players make sandwiches filling orders submitted through Twitch while PC players can steal ingredients as mice.",
-      modalInfo: "More info to be posted.",
+      modalInfo:
+        "<p>I worked on Roach Coach for the 2018 48 Hour Seattle VR/AR Hackathon. Coming in with a little Unity experience from 2016 and this being my very first hackathon, I had never had the experience of working with so many people on a project. I remember being slightly worried that I wouldn't even be able to contribute much. Thankfully, I ended up learning a lot and spent most of my time integrating Twitch's API and making part of the main menu UI.</p><p>My most memorable moments were everyone frantically trying to get everything working last second before the judges came over and me being super unprepared for the night, sleeping on a table using my backpack as a pillow. Overall, this experience was well worth it as it inspired me to continue sharping my Unity skills and trying out VR development. For more information, go <a href='https://devpost.com/software/roachcoach-s-forbidden-food'>here</a> to checkout the DevPost page!</p>",
       thumbnailImg: "images/RoachCoach.jpg",
       // imgs: [""], Add 2 side shots
       git: "https://github.com/ajmwagar/roachcoach",
@@ -101,35 +101,14 @@ const mainPage = {
     {
       title: "B.LAB",
       thumbnailDesc:
-        "Android and iOS app that gathers a listing of loan offerings customized to your specific profile.",
-      modalInfo: "More info to be posted.",
+        "Android and iOS app that gathers a list of loan offerings customized to your specific profile.",
+      modalInfo:
+        "<p>My team and I submitted B.LAB (\"Buy Lab\" or \"Buy Like a Boss\") for the 2019 Seattle Def Hacks which was Co-Hosted by <a href='https://evenfinancial.com/'>Even Financial</a>. We created this through <a href='https://dotnet.microsoft.com/apps/xamarin/xamarin-forms'>Xamarin.Forms</a>, Microsoft’s cross-platform .NET framework that assists with building iOS, Android, and Windows apps. Using XAML, I created the profile tab where the user could add their financial information. I also partially worked on integrating the Even API into our \"Search for Loan Offers\" tab (the main feature of the app) by sending a post request in JavaScript and then parsing the returned JSON in C#.</p><p>This was my first time utilizing C# outside of the Unity game engine and first time making user interfaces. Additionally, I had little JavaScript knowledge before this hackathon, so this experience really helped with sharpening various skills. Unlike the 2018 Seattle VR Hackathon, I felt the time crunch in this one a lot more stressful since it was only 24 hours, so I didn’t even have a chance to sleep. Head over to <a href='https://devpost.com/software/evencredit2019'>DevPost</a> to read more about the app!</p>",
       thumbnailImg: "images/B.LAB.png",
       // imgs: [""], Add 2 images of the different tabs
       git: "https://github.com/shreystechtips/B.LAB-EvenAPI",
     },
   ],
 };
-
-//HM
-//"https://www.frogrockstudio.com/house-match/"
-
-//P57
-//"https://nlaha.com"
-
-//HVS
-
-//DC
-
-//TTTA
-
-//FG
-
-//PW
-
-//RC
-//"https://devpost.com/software/roachcoach-s-forbidden-food"],
-
-//B.LAB
-//"https://devpost.com/software/evencredit2019", "https://shrey.ml"],
 
 export { mainPage };

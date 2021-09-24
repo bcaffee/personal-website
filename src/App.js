@@ -36,6 +36,15 @@ export default function App() {
   //   darkMode = true;
   // }
 
+  /* TODOS:
+1. Fix mobile project grid width
+2. Clean up/refactor/modularize App.js
+3. Remove purple from CSS and add to primary color for theme provider (change all headings to Typography). Experiment more with button hovering.
+4. Fix ImageListModal and align="stretch" bug
+5. Remember in local storage (when refreshing) about dark/light mode and attempt to get preference for theme working.
+6. Experiment with dark mode card paper elevation
+*/
+
   const [darkMode, setDarkMode] = React.useState(true);
 
   const lightTheme = createTheme({
@@ -60,8 +69,8 @@ export default function App() {
       // },
       background: {
         default: "#131212",
-        paper: "#303030",
-        // paper: "#222525"
+        // paper: "#303030",
+        paper: "#222525"
       },
       text: {
         primary: "#ffffff",
@@ -69,6 +78,7 @@ export default function App() {
       action: {
         active: "#ffffff",
         //doesn't work - hover: "#6d62ff",
+        
       },
     },
   });
@@ -77,12 +87,12 @@ export default function App() {
   const oProjects = mainPage.other;
   const hProjects = mainPage.hackathons;
 
-  var socialMode;
+  var social;
 
   if (darkMode) {
-    socialMode = "social-dark";
+    social = "social-dark";
   } else {
-    socialMode = "social-light";
+    social = "social-light";
   }
 
   return (
@@ -95,12 +105,12 @@ export default function App() {
                 <h1>Ben Caffee</h1>
               </div>
               <Grid container spacing={2} className="social-grid">
-                <Grid item className={socialMode}>
+                <Grid item className={social}>
                   <a href="https://github.com/bcaffee">
                     <FaGithub />
                   </a>
                 </Grid>
-                <Grid item className={socialMode}>
+                <Grid item className={social}>
                   <a href="mailto:bncaffee@uw.edu">
                     <FaEnvelope />
                   </a>
@@ -190,7 +200,7 @@ export default function App() {
                 </Grid>
 
                 <Grid item>
-                  <h4>Hackathons</h4>
+                  <h4>Experiences</h4>
                   <Grid container spacing={2} direction="column">
                     {Object.keys(hProjects).map((project) => (
                       <Grid item key={project}>
