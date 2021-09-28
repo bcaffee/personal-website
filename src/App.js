@@ -37,12 +37,13 @@ export default function App() {
   // }
 
   /* TODOS:
-1. Fix mobile project grid width
-2. Clean up/refactor/modularize App.js
-3. Remove purple from CSS and add to primary color for theme provider (change all headings to Typography). Experiment more with button hovering.
-4. Fix ImageListModal and align="stretch" bug
-5. Remember in local storage (when refreshing) about dark/light mode and attempt to get preference for theme working.
-6. Experiment with dark mode card paper elevation
+1. Add P57 and personal website modal info
+2. Fix mobile project grid width
+3. Clean up/refactor/modularize App.js
+4. Remove purple from CSS and add to primary color for theme provider (change all headings to Typography). Experiment more with button hovering.
+5. Fix ImageListModal and align="stretch" bug
+6. Remember in local storage (when refreshing) about dark/light mode and attempt to get preference for theme working.
+7. Experiment with dark mode card paper elevation with "light" shadow
 */
 
   const [darkMode, setDarkMode] = React.useState(true);
@@ -70,7 +71,7 @@ export default function App() {
       background: {
         default: "#131212",
         // paper: "#303030",
-        paper: "#222525"
+        paper: "#222525",
       },
       text: {
         primary: "#ffffff",
@@ -78,7 +79,6 @@ export default function App() {
       action: {
         active: "#ffffff",
         //doesn't work - hover: "#6d62ff",
-        
       },
     },
   });
