@@ -1,6 +1,6 @@
 const mainPage = {
   introductions: [
-    "Hi! I'm a Computer Science and Math major at UW Seattle, graduating in 2025. I like learning about different ML applications such as detecting fake media, natural language processing, and enhanced graphics like Nvidia's DLSS technology. My interests also include reinforcement learning for games and cybersecurity.",
+    "Hi! I'm a Computer Science major at UW Seattle, graduating in 2025. I like learning about different ML applications such as detecting fake media, natural language processing, and enhanced graphics like Nvidia's DLSS technology. My interests also include reinforcement learning for games and cybersecurity.",
     "During high school, I tutored students in Math and CS (among other subjects), and lead the General Computing Club (GCC). At GCC, people of all backgrounds learn to connect their interests to computer science and create projects using more than just coding skills. Outside of academics, I've enjoyed swimming competitively and practicing Brazilian Jiu-Jitsu.",
   ],
 
@@ -10,6 +10,7 @@ const mainPage = {
     "ML (Python)",
     "JavaScript (general + React)",
     "HTML and CSS Web Design",
+    "LaTeX"
   ],
   otherSkills: [
     "Git",
