@@ -1,16 +1,16 @@
 const mainPage = {
   introductions: [
-    "Hi! I'm a Computer Science major at UW Seattle, graduating in 2025. I like learning about different ML applications such as detecting fake media, natural language processing, and enhanced graphics like Nvidia's DLSS technology. My interests also include reinforcement learning for games and cybersecurity.",
-    "During high school, I tutored students in Math and CS (among other subjects), and lead the General Computing Club (GCC). At GCC, people of all backgrounds learn to connect their interests to computer science and create projects using more than just coding skills. Outside of academics, I've enjoyed swimming competitively and practicing Brazilian Jiu-Jitsu.",
+    "Hi! I'm a Computer Science major at UW Seattle, graduating in 2025. Some of my interests include learning about ML applications such as fake media detection and enhanced graphics like Nvidia's DLSS technology, and RL for games and cybersecurity. I'm also curious on how natural language processing algorithms such as OpenAI's GPT-3 can be improved without simply adding a ton more parameters.",
+    "During high school, I tutored students in Math and CS (among other subjects), and lead the General Computing Club (GCC). At GCC, people of all backgrounds connect their passions to computer science, creating projects and building their knowledge of software, game design, and art. Outside of academics, I've enjoyed swimming competitively and practicing Brazilian Jiu-Jitsu.",
   ],
 
   skills: [
     "Java Programming",
     "C# Game Development (Unity)",
-    "ML (Python)",
-    "JavaScript (general + React)",
+    "Python",
+    "JavaScript (general, React)",
     "HTML and CSS Web Design",
-    "LaTeX"
+    "LaTeX",
   ],
   otherSkills: [
     "Git",
@@ -19,7 +19,8 @@ const mainPage = {
     "Video Editing",
   ],
   skillsToImprove: [
-    "ML/Data Science (Python)",
+    "ML and Data Science (Python)",
+    "C++",
     "C++ Game Development (Unreal)",
     "3D Modeling",
     "Music Production (FL Studio)",
@@ -47,7 +48,7 @@ const mainPage = {
       title: "HVScape",
       thumbnailDesc: "Super simple high school-themed VR escape room.",
       modalInfo:
-        "<p>I built HVScape from November 2018 to May 2019 with two other students as part of my high school’s CS Projects class, where we learned about and went through the agile development process (writing specifications, using azure dev-ops). We were in class about 5 hours a week, working a little bit at home, and then for the last month, it became crunch time, so I spent a lot of time after school trying to get everything ready for the end of the year presentation.</p> <p> I mainly worked on general VR functions such as the player interacting with objects and the main menu, the puzzle completion system, and the scale puzzle. Despite being frustrating at points, I overall enjoyed creating this game since I could dedicate a whole class to throw myself into VR development for the first time from scratch.</p>",
+        "<p>I built HVScape from November 2018 to May 2019 with two other students as part of my high school’s CS Projects class, where we learned about and went through the agile development process (writing specifications, using azure dev-ops). We were in class about 5 hours a week, working a little bit at home, and then for the last month, it became crunch time, so I spent a lot of time after school trying to get everything ready for the end of the year demo and mock 'tech panel.'</p> <p> I mainly worked on general VR functions such as the player interacting with objects and the main menu, the puzzle completion system, and the scale puzzle. Despite being frustrating at points, I overall enjoyed creating this game since I could dedicate a whole class to throw myself into VR development for the first time from scratch.</p>",
       thumbnailImg: "images/HVScape.png",
       // imgs: [""], Add library and second classroom image to github README
       git: "https://github.com/bcaffee/HVScape",

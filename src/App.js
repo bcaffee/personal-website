@@ -132,7 +132,10 @@ export default function App() {
                 <Grid item>
                   <h4 className="skill-titles">Skills</h4>
                   <div className="skills-note">
-                    (Sorted by experience in descending order)
+                    (Sorted by proficiency in descending order
+                  </div>
+                  <div className="skills-note">
+                    relative to my overall level of experience)
                   </div>
                   <Grid container spacing={2}>
                     <ul>
