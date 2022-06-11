@@ -2,16 +2,27 @@ import React from "react";
 import "./custom.css";
 import { mainPage } from "./site-content.js";
 import ProjectCard from "./ProjectCard";
-import { createTheme, ThemeProvider } from "@material-ui/core/styles";
+import {
+  // makeStyles,
+  createTheme,
+  ThemeProvider,
+} from "@material-ui/core/styles";
 import {
   IconButton,
   Grid,
   CssBaseline,
   Tooltip,
   // useMediaQuery,
-  // Paper,
+  Paper,
 } from "@material-ui/core";
 import { FaGithub, FaEnvelope, FaSun, FaMoon } from "react-icons/fa";
+import { IoLogoLinkedin } from "react-icons/io5";
+
+// const useStyles = makeStyles({
+//   themeButton: {
+//     verticalAlign: "text-top",
+//   },
+// });
 
 export default function App() {
   // const darkPreference = useMediaQuery("(prefers-color-scheme: dark)"); // why is this always true?
@@ -19,7 +30,7 @@ export default function App() {
 
   //Theme is not switching to browser preference
   // React.useEffect(() => {
-  //   var theme = localStorage.getItem("theme");
+  //   let theme = localStorage.getItem("theme");
   //   if (theme === null) {
   //     setDarkState(darkPreference);
   //   } else {
@@ -41,9 +52,8 @@ export default function App() {
 2. Fix mobile project grid width
 3. Clean up/refactor/modularize App.js
 4. Remove purple from CSS and add to primary color for theme provider (change all headings to Typography). Experiment more with button hovering.
-5. Fix ImageListModal and align="stretch" bug
+5. Fix align="stretch" bug
 6. Remember in local storage (when refreshing) about dark/light mode and attempt to get preference for theme working.
-7. Experiment with dark mode card paper elevation with "light" shadow
 */
 
   const [darkMode, setDarkMode] = React.useState(true);
@@ -87,13 +97,15 @@ export default function App() {
   const oProjects = mainPage.other;
   const hProjects = mainPage.hackathons;
 
-  var social;
+  let social;
 
   if (darkMode) {
     social = "social-dark";
   } else {
     social = "social-light";
   }
+
+  // const classes = useStyles();
 
   return (
     <div className="App">
@@ -106,37 +118,52 @@ export default function App() {
               </div>
               <Grid container spacing={2} className="social-grid">
                 <Grid item className={social}>
-                  <a href="https://github.com/bcaffee">
-                    <FaGithub />
-                  </a>
-                </Grid>
-                <Grid item className={social}>
                   <a href="mailto:bncaffee@uw.edu">
                     <FaEnvelope />
                   </a>
                 </Grid>
-                {/* <Paper className="dark-mode-button"> */}
+                <Grid item className={social}>
+                  <a href="https://linkedin.com/in/bcaffee">
+                    <IoLogoLinkedin />
+                  </a>
+                </Grid>
+                <Grid item className={social}>
+                  <a href="https://github.com/bcaffee">
+                    <FaGithub />
+                  </a>
+                </Grid>
                 <Tooltip title="Theme Toggle" placement="right-start">
-                  <IconButton onClick={() => setDarkMode(!darkMode)}>
-                    {darkMode ? <FaSun /> : <FaMoon />}
-                  </IconButton>
+                  <Paper>
+                    <IconButton
+                      // variant="contained"
+                      size="medium"
+                      // className={classes.themeButton}
+                      // className="theme-button"
+                      onClick={() => setDarkMode(!darkMode)}
+                    >
+                      {darkMode ? (
+                        <FaSun className={social} />
+                      ) : (
+                        <FaMoon className={social} />
+                      )}
+                    </IconButton>
+                  </Paper>
                 </Tooltip>
-                {/* </Paper> */}
               </Grid>
 
               <div className="introduction">
                 <p>{mainPage.introductions[0]}</p>
-                <p>{mainPage.introductions[1]}</p>
+                {/* <p>{mainPage.introductions[1]}</p> */}
               </div>
               <Grid container spacing={10} className="skills-grid">
                 <Grid item>
                   <h4 className="skill-titles">Skills</h4>
-                  <div className="skills-note">
-                    (Sorted by proficiency in descending order
-                  </div>
-                  <div className="skills-note">
-                    relative to my overall level of experience)
-                  </div>
+                  {/* <div className="skills-note"> */}
+                  {/* (Sorted by proficiency in descending order */}
+                  {/* </div> */}
+                  {/* <div className="skills-note"> */}
+                  {/* relative to my overall level of experience) */}
+                  {/* </div> */}
                   <Grid container spacing={2}>
                     <ul>
                       {Object.keys(mainPage.skills).map((skill) => (
@@ -157,31 +184,11 @@ export default function App() {
                     </ul>
                   </Grid>
                 </Grid>
-
-                <Grid item>
-                  <h4 className="skill-titles">Goals</h4>
-                  <div className="skills-note">
-                    (Skills I want to improve. Sorted by priority in descending
-                    order)
-                  </div>
-                  <Grid container spacing={2} className="skills">
-                    <ul>
-                      {Object.keys(mainPage.skillsToImprove).map(
-                        (skillToImprove) => (
-                          <Grid item key={skillToImprove}>
-                            <li className="skills">
-                              {mainPage.skillsToImprove[skillToImprove]}
-                            </li>
-                          </Grid>
-                        )
-                      )}
-                    </ul>
-                  </Grid>
-                </Grid>
+                
               </Grid>
               <Grid container spacing={2} className="projects-grid">
                 <Grid item>
-                  <h4>Game Projects</h4>
+                  <h4>Games</h4>
                   <Grid container spacing={2} direction="column">
                     {Object.keys(gProjects).map((project) => (
                       <Grid item key={project}>
@@ -203,7 +210,7 @@ export default function App() {
                 </Grid>
 
                 <Grid item>
-                  <h4>Experiences</h4>
+                  <h4>Hackathons</h4>
                   <Grid container spacing={2} direction="column">
                     {Object.keys(hProjects).map((project) => (
                       <Grid item key={project}>

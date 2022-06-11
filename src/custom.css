@@ -34,9 +34,10 @@
   color: #000000;
 }
 
-/* .dark-mode-button {
-  max-width: 40px;
-  max-height: 40px;
+/* .theme-button {
+  max-width: 50px;
+  max-height: 50px;
+  vertical-align: top !important;
 } */
 
 /* .dark-mode-button-2 {

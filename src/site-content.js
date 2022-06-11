@@ -1,14 +1,15 @@
 const mainPage = {
   introductions: [
-    "Hi! I'm a Computer Science major at UW Seattle, graduating in 2025. Some of my interests include learning about ML applications such as fake media detection and enhanced graphics like Nvidia's DLSS technology, and RL for games and cybersecurity. I'm also curious on how natural language processing algorithms such as OpenAI's GPT-3 can be improved without simply adding a ton more parameters.",
-    "During high school, I tutored students in Math and CS (among other subjects), and lead the General Computing Club (GCC). At GCC, people of all backgrounds connect their passions to computer science, creating projects and building their knowledge of software, game design, and art. Outside of academics, I've enjoyed swimming competitively and practicing Brazilian Jiu-Jitsu.",
+    "Hi! I'm a sophomore at the Univerity of Washington Seattle majoring in computer science, expecting to graduate in 2025. My current research interests include machine learning and algorithms. While I'm always trying to improve the skills listed below, some of my longer term goals are to develop games in Unreal Engine and, more generally, use C++ for graphics, 3D model in Blender, and produce music in FL Studio.",
   ],
 
   skills: [
-    "Java Programming",
-    "C# Game Development (Unity)",
+    "Java",
+    "C#",
     "Python",
-    "JavaScript (general, React)",
+    "Unity Game Dev",
+    "React",
+    "JavaScript",
     "HTML and CSS Web Design",
     "LaTeX",
   ],
@@ -17,13 +18,6 @@ const mainPage = {
     "Azure DevOps Project Management",
     "Adobe Illustrator and Photoshop",
     "Video Editing",
-  ],
-  skillsToImprove: [
-    "ML and Data Science (Python)",
-    "C++",
-    "C++ Game Development (Unreal)",
-    "3D Modeling",
-    "Music Production (FL Studio)",
   ],
 
   games: [
@@ -73,7 +67,7 @@ const mainPage = {
       modalInfo:
         "<p>For this project, I used Java to create the customization GUI and draw the fractal. Inspiration came from wanting to better my Java graphic skills and using recursion to make art. The GUI itself has a lot of room for improvement since I rushed through that part. However, I’m thrilled with how the fractals turned out. For simplicity, the “tethered radial” part of the drawings means “connected circles.” </p> <p>The customization options include color, child fractal count, child depth, child-parent ratio, and dark or light mode. Besides some small bugs with the drawing panel creation and the dark mode not always working, the next steps are to add real-time drawing as the settings are changed and to include a warning plus stop drawing once the child fractals get too small. While working on this application, I learned about a cool abstract math <a href='https://www.youtube.com/watch?v=gB9n2gHsHN4'>video </a> about why fractals are typically not self-similar, and I highly recommend it.</p>",
       thumbnailImg: "images/FractalGenerator.png",
-      // imgs: [""], Add more fractl images to github README
+      // imgs: [""], Add more fractal images to github README
       git: "https://github.com/bcaffee/FractalGenerator",
     },
     {
@@ -110,7 +104,7 @@ const mainPage = {
       thumbnailDesc:
         "Android and iOS app that gathers a list of loan offerings customized to your specific profile.",
       modalInfo:
-        "<p>My team and I submitted B.LAB (‘Buy Lab’ or ‘Buy Like a Boss’) for the 2019 Seattle Def Hacks, which was Co-Hosted by <a href='https://evenfinancial.com/'>Even Financial</a>. We created this through<a href='https://dotnet.microsoft.com/apps/xamarin/xamarin-forms'>Xamarin.Forms</a>, Microsoft’s cross-platform .NET framework that assists with building iOS, Android, and Windows apps. Using XAML, I created the profile tab where the user could add their financial information. I also partially worked on integrating the Even API into our \"Search for Loan Offers\" tab (the main feature of the app) by sending a post request in JavaScript and then parsing the returned JSON in C#.</p><p>This was my first time utilizing C# outside of the Unity game engine and first time making user interfaces. Additionally, I had little JavaScript knowledge before this hackathon, so this experience helped sharpen multiple skills. Unlike the 2018 Seattle VR Hackathon, I felt the time crunch in this one was a lot more stressful since it was only 24 hours, so I didn’t even have a chance to sleep. Head over to <a href='https://devpost.com/software/evencredit2019'>DevPost </a> to read more about the app!</p>",
+        "<p>My team and I submitted B.LAB ('Buy Lab' or 'Buy Like a Boss') for the 2019 Seattle Def Hacks, which was Co-Hosted by <a href='https://evenfinancial.com/'>Even Financial</a>. We created this through<a href='https://dotnet.microsoft.com/apps/xamarin/xamarin-forms'>Xamarin.Forms</a>, Microsoft’s cross-platform .NET framework that assists with building iOS, Android, and Windows apps. Using XAML, I created the profile tab where the user could add their financial information. I also partially worked on integrating the Even API into our \"Search for Loan Offers\" tab (the main feature of the app) by sending a post request in JavaScript and then parsing the returned JSON in C#.</p><p>This was my first time utilizing C# outside of the Unity game engine and first time making user interfaces. Additionally, I had little JavaScript knowledge before this hackathon, so this experience helped sharpen multiple skills. Unlike the 2018 Seattle VR Hackathon, I felt the time crunch in this one was a lot more stressful since it was only 24 hours, so I didn’t even have a chance to sleep. Head over to <a href='https://devpost.com/software/evencredit2019'>DevPost </a> to read more about the app!</p>",
       thumbnailImg: "images/B.LAB.png",
       // imgs: [""], Add 2 images of the different tabs
       git: "https://github.com/shreystechtips/B.LAB-EvenAPI",
