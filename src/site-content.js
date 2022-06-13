@@ -1,24 +1,26 @@
 const mainPage = {
   introductions: [
-    "Hi! I'm a sophomore at the Univerity of Washington Seattle majoring in computer science, expecting to graduate in 2025. My current research interests include machine learning and algorithms. While I'm always trying to improve the skills listed below, some of my longer term goals are to develop games in Unreal Engine and, more generally, use C++ for graphics, 3D model in Blender, and produce music in FL Studio.",
+    "Hi! I'm a sophomore at the University of Washington Seattle majoring in computer science with current research interests including machine learning and algorithms.",
+    "Some of my long term aspirations are to develop games in Unreal Engine as a hobby, 3D model in Blender, and produce music in FL Studio.",
+    "Outside of academics, I enjoy swimming, practicing Brazilian Jiu-Jitsu, playing games with friends, and reading math books on all sorts of fields like number theory and abstract algebra.",
   ],
 
-  skills: [
-    "Java",
-    "C#",
-    "Python",
-    "Unity Game Dev",
-    "React",
-    "JavaScript",
-    "HTML and CSS Web Design",
-    "LaTeX",
-  ],
-  otherSkills: [
-    "Git",
-    "Azure DevOps Project Management",
-    "Adobe Illustrator and Photoshop",
-    "Video Editing",
-  ],
+  // skills: [
+  //   "Java",
+  //   "C#",
+  //   "Python",
+  //   "Unity Game Dev",
+  //   "React",
+  //   "JavaScript",
+  //   "HTML and CSS Web Design",
+  //   "LaTeX",
+  // ],
+  // otherSkills: [
+  //   "Git",
+  //   "Azure DevOps Project Management",
+  //   "Adobe Illustrator and Photoshop",
+  //   "Video Editing",
+  // ],
 
   games: [
     {
@@ -65,7 +67,7 @@ const mainPage = {
       thumbnailDesc:
         "GUI that produces self-similar tethered radial fractals like the <a href='https://en.wikipedia.org/wiki/Sierpinski_triangle'>Sierpiński triangle</a>.",
       modalInfo:
-        "<p>For this project, I used Java to create the customization GUI and draw the fractal. Inspiration came from wanting to better my Java graphic skills and using recursion to make art. The GUI itself has a lot of room for improvement since I rushed through that part. However, I’m thrilled with how the fractals turned out. For simplicity, the “tethered radial” part of the drawings means “connected circles.” </p> <p>The customization options include color, child fractal count, child depth, child-parent ratio, and dark or light mode. Besides some small bugs with the drawing panel creation and the dark mode not always working, the next steps are to add real-time drawing as the settings are changed and to include a warning plus stop drawing once the child fractals get too small. While working on this application, I learned about a cool abstract math <a href='https://www.youtube.com/watch?v=gB9n2gHsHN4'>video </a> about why fractals are typically not self-similar, and I highly recommend it.</p>",
+        "<p>For this project, I used Java to create the customization GUI and draw the fractal. Inspiration came from wanting to better my Java graphic skills and using recursion to make art. The GUI itself has a lot of room for improvement since I rushed through that part. However, I’m thrilled with how the fractals turned out. For simplicity, the “tethered radial” part of the drawings means “connected circles.” </p> <p>The customization options include color, child fractal count, child depth, child-parent ratio, and dark or light mode. Besides some small bugs with the drawing panel creation and the dark mode not always working, the next steps are to add real-time drawing as the settings are changed and to include a warning plus stop drawing once the child fractals get too small. While working on this application, I learned about a cool abstract math <a href='https://www.youtube.com/watch?v=gB9n2gHsHN4'>video</a> about why fractals are typically not self-similar, and I highly recommend it.</p>",
       thumbnailImg: "images/FractalGenerator.png",
       // imgs: [""], Add more fractal images to github README
       git: "https://github.com/bcaffee/FractalGenerator",

@@ -153,18 +153,20 @@ export default function App() {
 
               <div className="introduction">
                 <p>{mainPage.introductions[0]}</p>
+                <p>{mainPage.introductions[1]}</p>
+                <p>{mainPage.introductions[2]}</p>
                 {/* <p>{mainPage.introductions[1]}</p> */}
               </div>
-              <Grid container spacing={10} className="skills-grid">
-                <Grid item>
-                  <h4 className="skill-titles">Skills</h4>
-                  {/* <div className="skills-note"> */}
-                  {/* (Sorted by proficiency in descending order */}
-                  {/* </div> */}
-                  {/* <div className="skills-note"> */}
-                  {/* relative to my overall level of experience) */}
-                  {/* </div> */}
-                  <Grid container spacing={2}>
+              {/* <Grid container spacing={10} className="skills-grid"> */}
+              {/* <Grid item> */}
+              {/* <h4 className="skill-titles">Skills</h4> */}
+              {/* <div className="skills-note"> */}
+              {/* (Sorted by proficiency in descending order */}
+              {/* </div> */}
+              {/* <div className="skills-note"> */}
+              {/* relative to my overall level of experience) */}
+              {/* </div> */}
+              {/* <Grid container spacing={2}>
                     <ul>
                       {Object.keys(mainPage.skills).map((skill) => (
                         <Grid item key={skill}>
@@ -183,9 +185,8 @@ export default function App() {
                       ))}
                     </ul>
                   </Grid>
-                </Grid>
-                
-              </Grid>
+                </Grid> */}
+
               <Grid container spacing={2} className="projects-grid">
                 <Grid item>
                   <h4>Games</h4>
