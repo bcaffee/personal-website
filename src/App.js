@@ -47,15 +47,6 @@ export default function App() {
   //   darkMode = true;
   // }
 
-  /* TODOS:
-1. Add P57 and personal website modal info
-2. Fix mobile project grid width
-3. Clean up/refactor/modularize App.js
-4. Remove purple from CSS and add to primary color for theme provider (change all headings to Typography). Experiment more with button hovering.
-5. Fix align="stretch" bug
-6. Remember in local storage (when refreshing) about dark/light mode and attempt to get preference for theme working.
-*/
-
   const [darkMode, setDarkMode] = React.useState(true);
 
   const lightTheme = createTheme({
@@ -154,8 +145,6 @@ export default function App() {
               <div className="introduction">
                 <p>{mainPage.introductions[0]}</p>
                 <p>{mainPage.introductions[1]}</p>
-                <p>{mainPage.introductions[2]}</p>
-                {/* <p>{mainPage.introductions[1]}</p> */}
               </div>
               {/* <Grid container spacing={10} className="skills-grid"> */}
               {/* <Grid item> */}
