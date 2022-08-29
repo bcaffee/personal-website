@@ -145,6 +145,7 @@ export default function App() {
               <div className="introduction">
                 <p>{mainPage.introductions[0]}</p>
                 <p>{mainPage.introductions[1]}</p>
+                <p>{mainPage.introductions[2]}</p>
               </div>
               {/* <Grid container spacing={10} className="skills-grid"> */}
               {/* <Grid item> */}

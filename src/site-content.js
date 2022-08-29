@@ -1,6 +1,7 @@
 const mainPage = {
   introductions: [
-    "Hi! I'm a sophomore at the University of Washington Seattle, majoring in computer science. My main research interests include machine learning, natural language processing, and computer vision.",
+    "I'm in my 2nd year at the University of Washington Seattle, majoring in computer science with a concentration in data science. The earliest I'm expecting to graduate is spring 2024 and the latest is spring 2025.",
+    "My main research interests include machine learning, natural language processing, and computer vision.",
     "Outside of academics, I enjoy swimming, practicing Brazilian Jiu-Jitsu, playing games with friends, and going down various math rabbit holes.",
   ],
 
