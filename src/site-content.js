@@ -1,8 +1,8 @@
 const mainPage = {
   introductions: [
-    "I'm in my 2nd year at the University of Washington Seattle, majoring in computer science with a concentration in data science. The earliest I'm expecting to graduate is spring 2024 and the latest is spring 2025.",
-    "My main research interests include machine learning, natural language processing, and computer vision.",
-    "Outside of academics, I enjoy swimming, practicing Brazilian Jiu-Jitsu, playing games with friends, and going down various math rabbit holes.",
+    "I'm in my 2nd year at the University of Washington Seattle, majoring in computer science with a concentration in data science. I'm expecting to graduate in spring 2025. Most of my programming experience includes Python, Java, and C#.",
+    "My broad research interests include machine learning, natural language processing, and computer vision. More specifically, I'm interested in researching ways of making LLMs and GANs less computationally expensive, language sentiment analysis, generally increasing explainability of various types of neural net based models to humans, and text to video generation.",
+    "Outside of academics, I enjoy swimming, practicing Brazilian Jiu-Jitsu, developing video games as hobby, playing both video and classic tabletop games with friends, and going down various math rabbit holes.",
   ],
 
   // skills: [
