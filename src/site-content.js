@@ -1,7 +1,9 @@
 const mainPage = {
   introductions: [
-    "I'm in my 2nd year at the University of Washington Seattle, majoring in computer science with a concentration in data science. I'm expecting to graduate in spring 2024. Most of my programming experience includes Python, Java, and C#.",
-    "My broad research interests include machine learning, natural language processing, and computer vision. More specifically, I'm interested in researching ways of making generative models like LLMs less computationally expensive, and general AI explainability and alignment.",
+    "I'm in my 3rd year at the University of Washington Seattle, majoring in computer science with a concentration in data science, and minoring in math. I'm expecting to graduate in spring 2025. My main programming experience comprises of Python, Java, and C#.",
+    "My broad research interests include machine learning, natural language processing, and computer vision. More specifically, I'm interested in researching ways of making generative models, like large language models (LLMs), less computationally expensive, " +
+    "introducing context into LLMs through reinforcement learning (RL) techniques to mitigate retraining, and increasing AI explainability + alignment. " + 
+    "Most recently, I've been thinking about how we can use LLMs--together with RL--for tasks such as playing non-spatial games.",
     "Outside of academics, I enjoy swimming, practicing Brazilian Jiu-Jitsu, developing video games as hobby, playing both video and classic tabletop games with friends, and going down various math rabbit holes.",
   ],
 
