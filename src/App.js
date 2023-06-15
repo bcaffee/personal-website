@@ -214,7 +214,7 @@ export default function App() {
             </div>
           </div>
           <div className="footer">
-            Copyright © {new Date().getFullYear()} Ben Caffee. Last updated: JUne 2023
+            Copyright © {new Date().getFullYear()} Ben Caffee. Last updated: June 2023
           </div>
         </CssBaseline>
       </ThemeProvider>

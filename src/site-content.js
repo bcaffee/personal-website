@@ -4,7 +4,7 @@ const mainPage = {
     "My broad research interests include machine learning, natural language processing, and computer vision. More specifically, I'm interested in researching ways of making generative models, like large language models (LLMs), less computationally expensive, " +
     "introducing context into LLMs through reinforcement learning (RL) techniques to mitigate retraining, and increasing AI explainability + alignment. " + 
     "Most recently, I've been thinking about how we can use LLMs--together with RL--for tasks such as playing non-spatial games.",
-    "Outside of academics, I enjoy swimming, practicing Brazilian Jiu-Jitsu, developing video games as hobby, playing both video and classic tabletop games with friends, and going down various math rabbit holes.",
+    "Outside of academics, I enjoy swimming, practicing Brazilian Jiu-Jitsu, developing video games as hobby (see some old miscellaneous projects below), playing both video and classic tabletop games with friends, and going down various math rabbit holes.",
   ],
 
   // skills: [
