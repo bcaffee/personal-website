@@ -2,8 +2,8 @@ const mainPage = {
   introductions: [
     "I'm in my 3rd year at the University of Washington Seattle, majoring in computer science with a concentration in data science, and minoring in math. I'm expecting to graduate in spring 2025. My main programming experience comprises of Python, Java, and C#.",
     "My broad research interests include machine learning, natural language processing, and computer vision. More specifically, I'm interested in researching ways of making generative models, like large language models (LLMs), less computationally expensive, " +
-    "introducing context into LLMs through reinforcement learning (RL) techniques to mitigate retraining, and increasing AI explainability + alignment. " + 
-    "Most recently, I've been thinking about how we can use LLMs--together with RL--for tasks such as playing non-spatial games.",
+    "introducing context into LLMs through reinforcement learning (RL) techniques to mitigate retraining, and increasing AI explainability. " + 
+    "Most recently, I've been thinking about how we can use LLMs--together with RL--for tasks such as playing games.",
     "Outside of academics, I enjoy swimming, practicing Brazilian Jiu-Jitsu, developing video games as hobby (see some old miscellaneous projects below), playing both video and classic tabletop games with friends, and going down various math rabbit holes.",
   ],
 
@@ -81,7 +81,7 @@ const mainPage = {
       title: "Personal Website",
       thumbnailDesc: "This website.",
       modalInfo: "<p>I made this website in August 2021, thinking it would be a quick half-week project, but I was way off. Hitting the minimum viable product spanned a few weeks. I didn't realize how long I would spend designing or pruning annoying placement bugs. In fact, from this project, I've learned I'm not too fond of frontend and that debugging and fixing java code, for instance, is more satisfying and exciting than positioning some text in the perfect spot (however, I understand this is an unpopular opinion).</p><p>Before developing the site, basic HTML and CSS plus random javascript spaghetti code experiences was the only relevant web development knowledge I had. In 2013, I also completed Khan Academy's new at the time JavaScript course. But I felt behind \"modern\" methods, so I looked into Vue.js and other frameworks. Eventually, I settled on React for its flexibility and <a href=https://mui.com/>Material UI</a>. Even though completing the site took longer than I had initially intended, I picked up many skills and don't regret it!</p>",
-      git: "https://github.com/bcaffee/personal-website",
+      git: "",
     },
   ],
 
